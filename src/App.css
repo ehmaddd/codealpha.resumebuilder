@@ -1,3 +1,33 @@
 .App {
   text-align: center;
 }
+
+.personal-div {
+  border: 1px solid black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 21rem;
+  margin:auto;
+  padding: 0 2rem 2rem 2rem;
+  background-color: beige;
+}
+
+.personal-div input,textarea {
+  width: 20rem;
+  height: 2rem;
+  border: 1px solid grey;
+  border-radius: 8px;
+  background-color:lightgrey;
+  outline: none;
+}
+
+.personal-div input:focus, textarea:focus {
+  border: 1px solid red;
+  border-style: double;
+}
+
+.skills-experience {
+  display: flex;
+  flex-direction: row;
+}
