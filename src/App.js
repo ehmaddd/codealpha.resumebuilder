@@ -3,6 +3,7 @@ import './App.css';
 
 function App() {
   const [skill, setSkill] = useState('');
+  const [exper, setExper] = useState('');
   const [value, setValue] = useState(
     {
       name: '',
@@ -17,11 +18,6 @@ function App() {
     }
   );
 
-  const result = ()=> {
-    let res = document.querySelector('#output').innerHTML;
-    res = value.name;
-  }
-
   const addSkill = () => {
     if (value.skills.includes(skill) || skill === '') {
       return;
@@ -32,6 +28,18 @@ function App() {
       skills: [...prevState.skills, skill],
     }));
     setSkill('');
+  };
+
+  const addExper = () => {
+    if (value.experience.includes(exper) || exper === '') {
+      return;
+    }
+
+    setValue((prevState) => ({
+      ...prevState,
+      experience: [...prevState.experience, exper],
+    }));
+    setExper('');
   };
 
   const handleSubmit = (event) => {
@@ -55,6 +63,7 @@ function App() {
               <input
                 type="text"
                 value={skill}
+                readOnly
               />
               <button>Remove</button>
             </li>
@@ -62,16 +71,31 @@ function App() {
         </ul>
         <label>
         New Skill:
-        <input type="text" name="name" value={skill} onChange={(e)=>setSkill(e.target.value)} />
+        <input type="text" name="skill" value={skill} onChange={(e)=>setSkill(e.target.value)} />
         </label>
         <button onClick={addSkill}>Add Skill</button>
 
         <h2>Experience</h2>
-        {/* Similar structure for experience section */}
+        <ul>
+          {value.experience.map((exp, index) => (
+            <li key={index}>
+              <input
+                type="text"
+                value={exper}
+                readOnly
+              />
+              <button>Remove</button>
+            </li>
+          ))}
+        </ul>
+        <label>
+        New Experience:
+        <input type="text" name="experience" value={exper} onChange={(e)=>setExper(e.target.value)} />
+        </label>
+        <button onClick={addExper}>Add Experience</button>
 
         <h2>Education</h2>
         {/* Similar structure for education section */}
-        <div id="output"></div>
         <button type="submit">Save</button>
       </form>
   );
