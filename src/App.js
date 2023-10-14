@@ -81,7 +81,7 @@ function App() {
             <li key={index}>
               <input
                 type="text"
-                value={exper}
+                value={exp}
                 readOnly
               />
               <button>Remove</button>
