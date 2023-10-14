@@ -2,13 +2,19 @@
   text-align: center;
 }
 
+.top-div {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: auto;
+}
+
 .personal-div {
   border: 1px solid black;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   width: 21rem;
-  margin:auto;
   padding: 0 2rem 2rem 2rem;
   background-color: beige;
 }
@@ -27,7 +33,22 @@
   border-style: double;
 }
 
-.skills-experience {
+.skills-div {
+  border: 1px solid black;
+  border-radius: 8px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  width: 21rem;
+  padding: 0 2rem 2rem 2rem;
+  background-color: beige;
+}
+
+.experience-div {
+  border: 1px solid black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 21rem;
+  padding: 0 2rem 2rem 2rem;
+  background-color: beige;
 }

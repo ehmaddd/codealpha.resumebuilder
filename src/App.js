@@ -46,17 +46,17 @@ function App() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div class="personal-div">
-        <h2>Personal Information</h2>
-        <label class="personal-label">Name: </label><input type="text" name="name" value={value.name} onChange={(e) => setValue({ ...value, name: e.target.value })} />
-        <label class="personal-label">Title: </label><input type="text" name="title" value={value.title} onChange={(e) => setValue({ ...value, title: e.target.value })} />
-        <label class="personal-label">Summary: </label><textarea name="summary" value={value.summary} onChange={(e) => setValue({ ...value, summary: e.target.value })} />
-        <label class="personal-label">GitHub: </label><input type="text" name="github" value={value.github} onChange={(e) => setValue({ ...value, github: e.target.value })} />
-        <label class="personal-label">Twitter: </label><input type="text" name="twitter" value={value.twitter} onChange={(e) => setValue({ ...value, twitter: e.target.value })} />
-        <label class="personal-label">LinkedIn: </label><input type="text" name="linkedin" value={value.linkedin} onChange={(e) => setValue({ ...value, linkedin: e.target.value })} />
-      </div>
+      <div class="top-div">
+        <div class="personal-div">
+          <h2>Personal Information</h2>
+          <label class="personal-label">Name: </label><input type="text" name="name" value={value.name} onChange={(e) => setValue({ ...value, name: e.target.value })} />
+          <label class="personal-label">Title: </label><input type="text" name="title" value={value.title} onChange={(e) => setValue({ ...value, title: e.target.value })} />
+          <label class="personal-label">Summary: </label><textarea name="summary" value={value.summary} onChange={(e) => setValue({ ...value, summary: e.target.value })} />
+          <label class="personal-label">GitHub: </label><input type="text" name="github" value={value.github} onChange={(e) => setValue({ ...value, github: e.target.value })} />
+          <label class="personal-label">Twitter: </label><input type="text" name="twitter" value={value.twitter} onChange={(e) => setValue({ ...value, twitter: e.target.value })} />
+          <label class="personal-label">LinkedIn: </label><input type="text" name="linkedin" value={value.linkedin} onChange={(e) => setValue({ ...value, linkedin: e.target.value })} />
+        </div>
 
-      <div class="skill-experience">
         <div class="skills-div">
           <h2>Skills</h2>
             <ul>
@@ -71,31 +71,33 @@ function App() {
                 </li>
               ))}
             </ul>
-        <label>
-        New Skill:
-        <input type="text" name="skill" value={skill} onChange={(e) => setSkill(e.target.value)} />
-      </label>
-      <button onClick={addSkill}>Add Skill</button>
+            <label>
+              New Skill:
+              <input type="text" name="skill" value={skill} onChange={(e) => setSkill(e.target.value)} />
+            </label>
+            <button onClick={addSkill}>Add Skill</button>
         </div>
 
-      <h2>Experience</h2>
-      <ul>
-        {value.experience.map((exp, index) => (
-          <li key={index}>
-            <input
+        <div class="experience-div">
+          <h2>Experience</h2>
+          <ul>
+            {value.experience.map((exp, index) => (
+              <li key={index}>
+              <input
               type="text"
               value={exp}
               readOnly
             />
             <button>Remove</button>
-          </li>
-        ))}
-      </ul>
-      <label>
-        New Experience:
-        <input type="text" name="experience" value={exper} onChange={(e) => setExper(e.target.value)} />
-      </label>
-      <button onClick={addExper}>Add Experience</button>
+            </li>
+          ))}
+          </ul>
+          <label>
+            New Experience:
+            <input type="text" name="experience" value={exper} onChange={(e) => setExper(e.target.value)} />
+          </label>
+          <button onClick={addExper}>Add Experience</button>
+        </div>
       </div>
 
       <h2>Education</h2>
