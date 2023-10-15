@@ -1,5 +1,23 @@
+body {
+  background-color:darkslategrey;
+}
+
 .App {
   text-align: center;
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color:blanchedalmond;
+}
+
+#root {
+  width: 75rem;
+  text-align: center;
+  margin: auto;
 }
 
 .top-div {
@@ -16,7 +34,7 @@
   flex-direction: column;
   width: 21rem;
   padding: 0 2rem 2rem 2rem;
-  background-color: beige;
+  background-color: darkolivegreen;
 }
 
 .personal-div input,textarea {
@@ -40,7 +58,21 @@
   flex-direction: column;
   width: 21rem;
   padding: 0 2rem 2rem 2rem;
-  background-color: beige;
+  background-color: darkcyan;
+}
+
+.skills-div input:focus {
+  border: 1px solid red;
+  border-style: double;
+}
+
+.skills-div .skill-add {
+  width: 20rem;
+  height: 2rem;
+  border: 1px solid grey;
+  border-radius: 8px;
+  background-color:lightgrey;
+  outline: none;
 }
 
 .experience-div {
@@ -50,5 +82,43 @@
   flex-direction: column;
   width: 21rem;
   padding: 0 2rem 2rem 2rem;
-  background-color: beige;
+  background-color: cadetblue;
+}
+
+.experience-div input:focus {
+  border: 1px solid red;
+  border-style: double;
+}
+
+.experience-div .exp-add {
+  width: 20rem;
+  height: 2rem;
+  border: 1px solid grey;
+  border-radius: 8px;
+  background-color:lightgrey;
+  outline: none;
+}
+
+.skills-div ul,
+.experience-div ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+.spec-display {
+  width: 70%;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.btn {
+  width: 50%;
+  background-color:darkslategrey;
+  border-radius: 4px;
+  color: white;
+  margin: 0.5rem auto auto auto;
+}
+
+.btn:hover {
+  color: greenyellow;
 }

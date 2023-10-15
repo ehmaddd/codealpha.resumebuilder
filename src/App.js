@@ -49,12 +49,12 @@ function App() {
       <div class="top-div">
         <div class="personal-div">
           <h2>Personal Information</h2>
-          <label class="personal-label">Name: </label><input type="text" name="name" value={value.name} onChange={(e) => setValue({ ...value, name: e.target.value })} />
-          <label class="personal-label">Title: </label><input type="text" name="title" value={value.title} onChange={(e) => setValue({ ...value, title: e.target.value })} />
-          <label class="personal-label">Summary: </label><textarea name="summary" value={value.summary} onChange={(e) => setValue({ ...value, summary: e.target.value })} />
-          <label class="personal-label">GitHub: </label><input type="text" name="github" value={value.github} onChange={(e) => setValue({ ...value, github: e.target.value })} />
-          <label class="personal-label">Twitter: </label><input type="text" name="twitter" value={value.twitter} onChange={(e) => setValue({ ...value, twitter: e.target.value })} />
-          <label class="personal-label">LinkedIn: </label><input type="text" name="linkedin" value={value.linkedin} onChange={(e) => setValue({ ...value, linkedin: e.target.value })} />
+          <input type="text" name="title" value={value.title} placeholder="Title" onChange={(e) => setValue({ ...value, title: e.target.value })} />
+          <input type="text" name="name" value={value.name} placeholder="Name" onChange={(e) => setValue({ ...value, name: e.target.value })} />
+          <textarea name="summary" value={value.summary} placeholder="Summary" onChange={(e) => setValue({ ...value, summary: e.target.value })} />
+          <input type="text" name="github" value={value.github} placeholder="Github" onChange={(e) => setValue({ ...value, github: e.target.value })} />
+          <input type="text" name="twitter" value={value.twitter} placeholder="Twitter" onChange={(e) => setValue({ ...value, twitter: e.target.value })} />
+          <input type="text" name="linkedin" value={value.linkedin} placeholder="LinkedIn" onChange={(e) => setValue({ ...value, linkedin: e.target.value })} />
         </div>
 
         <div class="skills-div">
@@ -64,6 +64,7 @@ function App() {
                 <li key={index}>
                 <input
                   type="text"
+                  class="spec-display"
                   value={skill}
                   readOnly
                 />
@@ -71,11 +72,8 @@ function App() {
                 </li>
               ))}
             </ul>
-            <label>
-              New Skill:
-              <input type="text" name="skill" value={skill} onChange={(e) => setSkill(e.target.value)} />
-            </label>
-            <button onClick={addSkill}>Add Skill</button>
+            <input type="text" name="skill" class="skill-add" placeholder="Skill" value={skill} onChange={(e) => setSkill(e.target.value)} />
+            <button class="btn" onClick={addSkill}>Add Skill</button>
         </div>
 
         <div class="experience-div">
@@ -85,18 +83,16 @@ function App() {
               <li key={index}>
               <input
               type="text"
+              class="spec-display"
               value={exp}
               readOnly
-            />
+              />
             <button>Remove</button>
             </li>
           ))}
           </ul>
-          <label>
-            New Experience:
-            <input type="text" name="experience" value={exper} onChange={(e) => setExper(e.target.value)} />
-          </label>
-          <button onClick={addExper}>Add Experience</button>
+          <input type="text" name="experience" class="exp-add" value={exper} placeholder="Experience" onChange={(e) => setExper(e.target.value)} />
+          <button class="btn" onClick={addExper}>Add Experience</button>
         </div>
       </div>
 
