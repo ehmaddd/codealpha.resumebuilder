@@ -105,6 +105,31 @@ h2 {
   text-align: left;
 }
 
+.education-div {
+  border: 1px solid white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 21rem;
+  padding: 0 2rem 2rem 2rem;
+  background-color: cadetblue;
+}
+
+.social-div {
+  border: 1px solid white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 21rem;
+  padding: 0 2rem 2rem 2rem;
+  background-color: cadetblue;
+}
+
+.degree,
+.subject {
+  height: 2rem;
+}
+
 .spec-display {
   width: 70%;
   border: 1px solid grey;
