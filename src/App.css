@@ -28,7 +28,7 @@ h2 {
 }
 
 .personal-div {
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@ h2 {
 }
 
 .skills-div {
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -76,7 +76,7 @@ h2 {
 }
 
 .experience-div {
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 8px;
   display: flex;
   flex-direction: column;

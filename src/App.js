@@ -40,6 +40,20 @@ function App() {
     setExper('');
   };
 
+  const delSkill = (index) => {
+    setValue((prevState) => ({
+      ...prevState,
+      skills: prevState.skills.filter((_, i) => i !== index),
+    }));
+  };
+
+  const delExper = (index) => {
+    setValue((prevState) => ({
+      ...prevState,
+      experience: prevState.experience.filter((_, i) => i !== index),
+    }));
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -68,7 +82,7 @@ function App() {
                   value={skill}
                   readOnly
                 />
-                 <button>Remove</button>
+                 <button onClick={()=>delSkill(index)}>Remove</button>
                 </li>
               ))}
             </ul>
@@ -87,7 +101,7 @@ function App() {
               value={exp}
               readOnly
               />
-            <button>Remove</button>
+            <button onClick={()=>delExper(index)}>Remove</button>
             </li>
           ))}
           </ul>
