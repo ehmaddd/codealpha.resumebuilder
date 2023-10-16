@@ -112,12 +112,12 @@ h2 {
   flex-direction: column;
   width: 21rem;
   padding: 0 2rem 2rem 2rem;
-  background-color: cadetblue;
+  background-color:darkgreen;
 }
 
 .education-div select {
   width: 20rem;
-  height: 2rem;
+  height: 2.5rem;
   border: 1px solid grey;
   border-radius: 8px;
   background-color:lightgrey;
@@ -131,7 +131,7 @@ h2 {
   flex-direction: column;
   width: 21rem;
   padding: 0 2rem 2rem 2rem;
-  background-color: cadetblue;
+  background-color:darkslategrey;
 }
 
 .social-div input {
