@@ -41,12 +41,16 @@ function App() {
     setExper('');
   };
 
-  const addEdu = (event) => {
-    const degre = event.target.value;
-    setEdu((prevEdu) => ({
-      ...prevEdu,
-      degree: degre,
-    }));
+  const addEdu = () => {
+    if(edu.degree !== 'null' && edu.degree !== '' && edu.subject !== 'null' && edu.subject !== ''){
+      setValue((prevState) => ({
+        ...prevState,
+        education: [...prevState.education, edu],
+      }));
+      setEdu({ degree: '', subject: '' });
+    }
+    document.querySelector('.degree').value = 'null';
+    document.querySelector('.subject').value = 'null';
   }
 
   const addSub = (event) => {
@@ -57,6 +61,13 @@ function App() {
     }));
   };
 
+  const addDeg = (event) => {
+    const degre = event.target.value;
+    setEdu((prevEdu) => ({
+      ...prevEdu,
+      degree: degre,
+    }));
+  }
 
   const delSkill = (index) => {
     setValue((prevState) => ({
@@ -69,6 +80,13 @@ function App() {
     setValue((prevState) => ({
       ...prevState,
       experience: prevState.experience.filter((_, i) => i !== index),
+    }));
+  };
+
+  const delEdu = (index) => {
+    setValue((prevState) => ({
+      ...prevState,
+      education: prevState.education.filter((_, i) => i !== index),
     }));
   };
 
@@ -125,9 +143,30 @@ function App() {
         </div>
       </div>
       <div class="top-div">
+        <div class="social-div">
+          <h2>Social Links</h2>
+          <input type="text" name="github" value={value.github} placeholder="Github" onChange={(e) => setValue({ ...value, github: e.target.value })} />
+          <input type="text" name="twitter" value={value.twitter} placeholder="Twitter" onChange={(e) => setValue({ ...value, twitter: e.target.value })} />
+          <input type="text" name="linkedin" value={value.linkedin} placeholder="LinkedIn" onChange={(e) => setValue({ ...value, linkedin: e.target.value })} />
+        </div>
+
         <div class="education-div">
           <h2>Education</h2>
-          <select class="degree" onChange={addEdu}>
+          <ul>
+              {value.education.map((edu, index) => (
+                <li key={index}>
+                <input
+                  type="text"
+                  class="spec-display"
+                  value={`${edu.degree} in ${edu.subject}`}
+                  readOnly
+                />
+                 <button onClick={()=>delEdu(index)}>Remove</button>
+                </li>
+              ))}
+            </ul>
+          <select class="degree" onChange={addDeg}>
+            <option value="null">Select Degree</option>
             <option value="PhD">PhD</option>
             <option value="MS">MS</option>
             <option value="MSc">M.Sc</option>
@@ -138,6 +177,7 @@ function App() {
             <option value="FA">F.A</option>
           </select>
           <select class="subject" onChange={addSub}>
+            <option value="null">Select Subject</option>
             <option value="Arabic">Arabic</option>
             <option value="Biology">Biology</option>
             <option value="Computer">Computer</option>
@@ -147,13 +187,7 @@ function App() {
             <option value="Physics">Physics</option>
             <option value="Urdu">Urdu</option>
           </select>
-        </div>
-
-        <div class="social-div">
-          <h2>Social Links</h2>
-          <input type="text" name="github" value={value.github} placeholder="Github" onChange={(e) => setValue({ ...value, github: e.target.value })} />
-          <input type="text" name="twitter" value={value.twitter} placeholder="Twitter" onChange={(e) => setValue({ ...value, twitter: e.target.value })} />
-          <input type="text" name="linkedin" value={value.linkedin} placeholder="LinkedIn" onChange={(e) => setValue({ ...value, linkedin: e.target.value })} />
+          <button class="btn" onClick={addEdu}>Add Education</button>
         </div>
       </div>
 
