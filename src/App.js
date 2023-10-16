@@ -106,6 +106,8 @@ function App() {
 
         <div class="skills-div">
           <h2>Skills</h2>
+          <input type="text" name="skill" class="skill-add" placeholder="Skill" value={skill} onChange={(e) => setSkill(e.target.value)} />
+          <button class="btn" onClick={addSkill}>Add Skill</button>
             <ul>
               {value.skills.map((skill, index) => (
                 <li key={index}>
@@ -119,12 +121,12 @@ function App() {
                 </li>
               ))}
             </ul>
-            <input type="text" name="skill" class="skill-add" placeholder="Skill" value={skill} onChange={(e) => setSkill(e.target.value)} />
-            <button class="btn" onClick={addSkill}>Add Skill</button>
         </div>
 
         <div class="experience-div">
           <h2>Experience</h2>
+          <input type="text" name="experience" class="exp-add" value={exper} placeholder="Experience" onChange={(e) => setExper(e.target.value)} />
+          <button class="btn" onClick={addExper}>Add Experience</button>
           <ul>
             {value.experience.map((exp, index) => (
               <li key={index}>
@@ -138,8 +140,6 @@ function App() {
             </li>
           ))}
           </ul>
-          <input type="text" name="experience" class="exp-add" value={exper} placeholder="Experience" onChange={(e) => setExper(e.target.value)} />
-          <button class="btn" onClick={addExper}>Add Experience</button>
         </div>
       </div>
       <div class="top-div">
@@ -152,19 +152,6 @@ function App() {
 
         <div class="education-div">
           <h2>Education</h2>
-          <ul>
-              {value.education.map((edu, index) => (
-                <li key={index}>
-                <input
-                  type="text"
-                  class="spec-display"
-                  value={`${edu.degree} in ${edu.subject}`}
-                  readOnly
-                />
-                 <button onClick={()=>delEdu(index)}>Remove</button>
-                </li>
-              ))}
-            </ul>
           <select class="degree" onChange={addDeg}>
             <option value="null">Select Degree</option>
             <option value="PhD">PhD</option>
@@ -188,6 +175,19 @@ function App() {
             <option value="Urdu">Urdu</option>
           </select>
           <button class="btn" onClick={addEdu}>Add Education</button>
+          <ul>
+              {value.education.map((edu, index) => (
+                <li key={index}>
+                <input
+                  type="text"
+                  class="spec-display"
+                  value={`${edu.degree} in ${edu.subject}`}
+                  readOnly
+                />
+                 <button onClick={()=>delEdu(index)}>Remove</button>
+                </li>
+              ))}
+            </ul>
         </div>
       </div>
 
