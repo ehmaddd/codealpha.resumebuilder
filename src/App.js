@@ -191,7 +191,7 @@ function App() {
         </div>
       </div>
 
-      <button type="submit">Save</button>
+      <button class="submit-btn" type="submit">Save</button>
     </form>
   );
 }
