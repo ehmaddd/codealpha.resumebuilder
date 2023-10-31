@@ -1,5 +1,43 @@
 import React, { useState } from 'react';
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
 import './App.css';
+
+async function createPdf(e) {
+  const pdfDoc = await PDFDocument.create();
+  const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
+
+  const page = pdfDoc.addPage();
+  const { width, height } = page.getSize();
+  const fontSize = 30;
+  page.drawText('Creating PDFs in JavaScript is awesome!', {
+    x: 50,
+    y: height - 4 * fontSize,
+    size: fontSize,
+    font: timesRomanFont,
+    color: rgb(0, 0.53, 0.71),
+  });
+
+  const pdfBytes = await pdfDoc.save();
+
+  // Create a Blob from the PDF data
+  const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+
+  // Create a URL for the Blob
+  const pdfUrl = URL.createObjectURL(blob);
+
+  // Create a link to download the PDF
+  const a = document.createElement('a');
+  a.href = pdfUrl;
+  a.download = 'generated.pdf'; // You can set the file name here
+  a.style.display = 'none';
+
+  // Append the link to the document and trigger a click event to download the PDF
+  document.body.appendChild(a);
+  a.click();
+
+  // Clean up the link element
+  document.body.removeChild(a);
+}
 
 function App() {
   const [skill, setSkill] = useState('');
@@ -93,11 +131,6 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
   };
-
-  const compile = (e) => {
-    e.target.preventDefault();
-    console.log("Compiled");
-  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -196,7 +229,7 @@ function App() {
         </div>
       </div>
 
-      <button class="submit-btn" onClick={compile} type="submit">Save</button>
+      <button class="submit-btn" onClick={createPdf} type="button">Save</button>
     </form>
   );
 }
