@@ -188,28 +188,28 @@ function App() {
     const pdfViewerContainer = document.createElement('div');
     pdfViewerContainer.className = 'pdf-viewer-container';
 
+        // Provide a download link for the user to save the PDF
+        const downloadLink = document.createElement('a');
+        downloadLink.href = pdfUrl;
+        downloadLink.download = 'resume.pdf'; // You can set the file name here
+        downloadLink.textContent = 'Download PDF';
+        pdfViewerContainer.appendChild(downloadLink);
+
+        // Create a close button
+        const closeButton = document.createElement('button');
+        closeButton.textContent = 'Close';
+        closeButton.addEventListener('click', () => {
+          // Close the PDF viewer
+          document.body.removeChild(pdfViewerContainer);
+        });
+        pdfViewerContainer.appendChild(closeButton);
+
     // Display the PDF in an iframe
     const iframe = document.createElement('iframe');
     iframe.src = pdfUrl;
     iframe.style.width = '100%';
     iframe.style.height = '500px'; // Adjust the height as needed
     pdfViewerContainer.appendChild(iframe);
-
-    // Provide a download link for the user to save the PDF
-    const downloadLink = document.createElement('a');
-    downloadLink.href = pdfUrl;
-    downloadLink.download = 'resume.pdf'; // You can set the file name here
-    downloadLink.textContent = 'Download PDF';
-    pdfViewerContainer.appendChild(downloadLink);
-
-    // Create a close button
-    const closeButton = document.createElement('button');
-    closeButton.textContent = 'Close';
-    closeButton.addEventListener('click', () => {
-      // Close the PDF viewer
-      document.body.removeChild(pdfViewerContainer);
-    });
-    pdfViewerContainer.appendChild(closeButton);
 
     // Append the PDF viewer container to the body
     document.body.appendChild(pdfViewerContainer);
