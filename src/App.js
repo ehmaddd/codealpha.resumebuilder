@@ -96,7 +96,98 @@ function App() {
     const page = pdfDoc.addPage([600, 400]);
     const helveticaFont = await pdfDoc.embedFont('Helvetica');
 
-    // ... Generate the PDF content ...
+    // Calculate the position for each piece of text
+    let y = page.getHeight() - 40; // Start below the top margin
+
+    // Personal Information
+    page.drawText(`Title: ${value.title}`, {
+      x: 50,
+      y,
+      size: 12,
+      font: helveticaFont,
+      color: rgb(0, 0, 0),
+    });
+    y -= 20;
+
+    page.drawText(`Name: ${value.name}`, {
+      x: 50,
+      y,
+      size: 12,
+      font: helveticaFont,
+      color: rgb(0, 0, 0),
+    });
+    y -= 20;
+
+    page.drawText(`Summary: ${value.summary}`, {
+      x: 50,
+      y,
+      size: 12,
+      font: helveticaFont,
+      color: rgb(0, 0, 0),
+    });
+    y -= 30;
+
+    // Skills
+    page.drawText('Skills:', {
+      x: 50,
+      y,
+      size: 12,
+      font: helveticaFont,
+      color: rgb(0, 0, 0),
+    });
+    y -= 20;
+    value.skills.forEach((skill) => {
+      page.drawText(skill, {
+        x: 70,
+        y,
+        size: 12,
+        font: helveticaFont,
+        color: rgb(0, 0, 0),
+      });
+      y -= 20;
+    });
+    y -= 10;
+
+    // Experience
+    page.drawText('Experience:', {
+      x: 50,
+      y,
+      size: 12,
+      font: helveticaFont,
+      color: rgb(0, 0, 0),
+    });
+    y -= 20;
+    value.experience.forEach((exp) => {
+      page.drawText(exp, {
+        x: 70,
+        y,
+        size: 12,
+        font: helveticaFont,
+        color: rgb(0, 0, 0),
+      });
+      y -= 20;
+    });
+    y -= 10;
+
+    // Education
+    page.drawText('Education:', {
+      x: 50,
+      y,
+      size: 12,
+      font: helveticaFont,
+      color: rgb(0, 0, 0),
+    });
+    y -= 20;
+    value.education.forEach((edu) => {
+      page.drawText(`${edu.degree} in ${edu.subject}`, {
+        x: 70,
+        y,
+        size: 12,
+        font: helveticaFont,
+        color: rgb(0, 0, 0),
+      });
+      y -= 20;
+    });
 
     const pdfBytes = await pdfDoc.save();
     const blob = new Blob([pdfBytes], { type: 'application/pdf' });
@@ -132,6 +223,7 @@ function App() {
     // Append the PDF viewer container to the body
     document.body.appendChild(pdfViewerContainer);
   }
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
