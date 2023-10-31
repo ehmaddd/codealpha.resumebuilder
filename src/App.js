@@ -91,6 +91,8 @@ function App() {
   };
 
   const createPdf = async() => {
+    const submitBtn = document.querySelector('.submit-btn');
+    submitBtn.style.display = "none";
     const pdfDoc = await PDFDocument.create();
     const page = pdfDoc.addPage([600, 400]);
     const helveticaFont = await pdfDoc.embedFont('Helvetica');
@@ -100,10 +102,10 @@ function App() {
     let y = page.getHeight() - 40; // Start below the top margin
 
     // Personal Information
-    page.drawText(`${value.name}`, {
+    page.drawText(`${value.name.toUpperCase()}`, {
       x: 50,
       y,
-      size: 17,
+      size: 19,
       font: timesRomanFont,
       color: rgb(0, 0.47, 0.72),
     });
@@ -188,17 +190,12 @@ function App() {
     const pdfViewerContainer = document.createElement('div');
     pdfViewerContainer.className = 'pdf-viewer-container';
 
-        // Provide a download link for the user to save the PDF
-        const downloadLink = document.createElement('a');
-        downloadLink.href = pdfUrl;
-        downloadLink.download = 'resume.pdf'; // You can set the file name here
-        downloadLink.textContent = 'Download PDF';
-        pdfViewerContainer.appendChild(downloadLink);
-
         // Create a close button
         const closeButton = document.createElement('button');
-        closeButton.textContent = 'Close';
+        closeButton.classList.add('close-btn');
+        closeButton.textContent = 'C L O S E';
         closeButton.addEventListener('click', () => {
+          submitBtn.style.display = "block";
           // Close the PDF viewer
           document.body.removeChild(pdfViewerContainer);
         });
@@ -213,6 +210,7 @@ function App() {
 
     // Append the PDF viewer container to the body
     document.body.appendChild(pdfViewerContainer);
+    window.scrollBy(0, 500);
   }
 
 
@@ -316,7 +314,7 @@ function App() {
         </div>
       </div>
 
-      <button class="submit-btn" onClick={createPdf} type="button">Save</button>
+      <button class="submit-btn" onClick={createPdf} type="button">S H O W</button>
     </form>
   );
 }

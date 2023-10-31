@@ -166,3 +166,40 @@ h2 {
 .btn:hover {
   color: greenyellow;
 }
+
+.submit-btn {
+  width: 20%;
+  background-color: greenyellow;
+  border: 1px solid white;
+  border-radius: 8px;
+  height: 2.5rem;
+  color: black;
+  margin: 1rem auto auto auto;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(219, 226, 22, 0.1);
+}
+
+.submit-btn:hover {
+  background-color: grey;
+  color: white;
+}
+
+.close-btn {
+  width: 20%;
+  background-color: darkslategrey;
+  border: 1px solid white;
+  border-radius: 8px;
+  height: 2.5rem;
+  color: yellow;
+  margin: 1rem auto;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(219, 226, 22, 0.1);
+}
+
+.close-btn:hover {
+  color: white;
+}
+
+.pdf-viewer-container {
+  text-align: center;
+}
