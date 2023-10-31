@@ -8,7 +8,6 @@ function App() {
   const [edu, setEdu] = useState({degree: '', subject: ''});
   const [value, setValue] = useState({
     name: '',
-    title: '',
     summary: '',
     github: '',
     twitter: '',
@@ -91,30 +90,22 @@ function App() {
     }));
   };
 
-  async function createPdf() {
+  const createPdf = async() => {
     const pdfDoc = await PDFDocument.create();
     const page = pdfDoc.addPage([600, 400]);
     const helveticaFont = await pdfDoc.embedFont('Helvetica');
+    const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
 
     // Calculate the position for each piece of text
     let y = page.getHeight() - 40; // Start below the top margin
 
     // Personal Information
-    page.drawText(`Title: ${value.title}`, {
+    page.drawText(`${value.name}`, {
       x: 50,
       y,
-      size: 12,
-      font: helveticaFont,
-      color: rgb(0, 0, 0),
-    });
-    y -= 20;
-
-    page.drawText(`Name: ${value.name}`, {
-      x: 50,
-      y,
-      size: 12,
-      font: helveticaFont,
-      color: rgb(0, 0, 0),
+      size: 17,
+      font: timesRomanFont,
+      color: rgb(0, 0.47, 0.72),
     });
     y -= 20;
 
@@ -234,7 +225,6 @@ function App() {
       <div class="top-div">
         <div class="personal-div">
           <h2>Personal Information</h2>
-          <input type="text" name="title" value={value.title} placeholder="Title" onChange={(e) => setValue({ ...value, title: e.target.value })} />
           <input type="text" name="name" value={value.name} placeholder="Name" onChange={(e) => setValue({ ...value, name: e.target.value })} />
           <textarea name="summary" value={value.summary} placeholder="Summary" onChange={(e) => setValue({ ...value, summary: e.target.value })} />
         </div>
