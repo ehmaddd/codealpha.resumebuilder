@@ -109,24 +109,25 @@ function App() {
       y,
       size: 20,
       font: timesRomanFont,
-      color: rgb(0, 0.47, 0.72),
+      color: rgb(0, 0, 0.5),
     });
+    y -=20;
 
     page.drawText(`${value.headline.toUpperCase()}`, {
-      x: 370,
+      x: 35,
       y,
       size: 14,
       font: timesRomanFont,
-      color: rgb(0, 0.47, 0.72),
+      color: rgb(0, 0, 0.5),
     });
     y -= 20;
 
     page.drawText(`${value.email}`, {
-      x: 270,
+      x: 35,
       y,
       size: 14,
       font: timesRomanFont,
-      color: rgb(0, 0.47, 0.72),
+      color: rgb(0, 0, 0.5),
     });
     y -= 30;
 
@@ -245,48 +246,7 @@ function App() {
           <input type="text" name="name" maxlength="20" value={value.name} placeholder="Name" onChange={(e) => setValue({ ...value, name: e.target.value })} />
           <input type="text" name="name" maxlength="25" value={value.headline} placeholder="Headline" onChange={(e) => setValue({ ...value, headline: e.target.value })} />
           <input type="text" name="name" maxlength="20" value={value.email} placeholder="email address" onChange={(e) => setValue({ ...value, email: e.target.value })} />
-          <textarea name="summary" value={value.summary} placeholder="Summary" onChange={(e) => setValue({ ...value, summary: e.target.value })} />
         </div>
-
-        <div class="skills-div">
-          <h2>Skills</h2>
-          <input type="text" name="skill" class="skill-add" placeholder="Skill" value={skill} onChange={(e) => setSkill(e.target.value)} />
-          <button class="btn" onClick={addSkill}>Add Skill</button>
-            <ul>
-              {value.skills.map((skill, index) => (
-                <li key={index}>
-                <input
-                  type="text"
-                  class="spec-display"
-                  value={skill}
-                  readOnly
-                />
-                 <button onClick={()=>delSkill(index)}>Remove</button>
-                </li>
-              ))}
-            </ul>
-        </div>
-
-        <div class="experience-div">
-          <h2>Experience</h2>
-          <input type="text" name="experience" class="exp-add" value={exper} placeholder="Experience" onChange={(e) => setExper(e.target.value)} />
-          <button class="btn" onClick={addExper}>Add Experience</button>
-          <ul>
-            {value.experience.map((exp, index) => (
-              <li key={index}>
-              <input
-              type="text"
-              class="spec-display"
-              value={exp}
-              readOnly
-              />
-            <button onClick={()=>delExper(index)}>Remove</button>
-            </li>
-          ))}
-          </ul>
-        </div>
-      </div>
-      <div class="top-div">
         <div class="social-div">
           <h2>Social Links</h2>
           <input type="text" name="github" value={value.github} placeholder="Github" onChange={(e) => setValue({ ...value, github: e.target.value })} />
@@ -294,7 +254,13 @@ function App() {
           <input type="text" name="linkedin" value={value.linkedin} placeholder="LinkedIn" onChange={(e) => setValue({ ...value, linkedin: e.target.value })} />
         </div>
 
-        <div class="education-div">
+        <div className="summary-div">
+          <h2>Summary</h2>
+          <textarea name="summary" value={value.summary} placeholder="Summary" onChange={(e) => setValue({ ...value, summary: e.target.value })} />
+        </div>
+      </div>
+      <div class="top-div">
+      <div class="education-div">
           <h2>Education</h2>
           <select class="degree" onChange={addDeg}>
             <option value="null">Select Degree</option>
@@ -333,6 +299,45 @@ function App() {
               ))}
             </ul>
         </div>
+
+      <div class="skills-div">
+          <h2>Skills</h2>
+          <input type="text" name="skill" class="skill-add" placeholder="Skill" value={skill} onChange={(e) => setSkill(e.target.value)} />
+          <button class="btn" onClick={addSkill}>Add Skill</button>
+            <ul>
+              {value.skills.map((skill, index) => (
+                <li key={index}>
+                <input
+                  type="text"
+                  class="spec-display"
+                  value={skill}
+                  readOnly
+                />
+                 <button onClick={()=>delSkill(index)}>Remove</button>
+                </li>
+              ))}
+            </ul>
+        </div>
+
+        <div class="experience-div">
+          <h2>Experience</h2>
+          <input type="text" name="experience" class="exp-add" value={exper} placeholder="Experience" onChange={(e) => setExper(e.target.value)} />
+          <button class="btn" onClick={addExper}>Add Experience</button>
+          <ul>
+            {value.experience.map((exp, index) => (
+              <li key={index}>
+              <input
+              type="text"
+              class="spec-display"
+              value={exp}
+              readOnly
+              />
+            <button onClick={()=>delExper(index)}>Remove</button>
+            </li>
+          ))}
+          </ul>
+        </div>
+
       </div>
 
       <button class="submit-btn" onClick={createPdf} type="button">S H O W</button>

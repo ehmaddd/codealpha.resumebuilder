@@ -144,6 +144,29 @@ h2 {
   outline: none;
 }
 
+.summary-div {
+  border: 1px solid white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 21rem;
+  padding: 0 2rem 2rem 2rem;
+  background-color:darkgreen;
+}
+
+.summary-div select {
+  width: 20rem;
+  height: 2.5rem;
+  border: 1px solid grey;
+  border-radius: 8px;
+  background-color:lightgrey;
+  outline: none;
+}
+
+.summary-div textarea {
+  height: 70%;
+}
+
 .degree,
 .subject {
   height: 2rem;
