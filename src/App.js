@@ -94,6 +94,11 @@ function App() {
     event.preventDefault();
   };
 
+  const compile = (e) => {
+    e.target.preventDefault();
+    console.log("Compiled");
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <div class="top-div">
@@ -191,7 +196,7 @@ function App() {
         </div>
       </div>
 
-      <button class="submit-btn" type="submit">Save</button>
+      <button class="submit-btn" onClick={compile} type="submit">Save</button>
     </form>
   );
 }
