@@ -91,40 +91,84 @@ function App() {
     }));
   };
 
-  async function createPdf(e) {
+  async function createPdf() {
     const pdfDoc = await PDFDocument.create();
-    const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
+    const page = pdfDoc.addPage([600, 400]); // You can adjust the page size as needed
 
-    const page = pdfDoc.addPage();
-    const { width, height } = page.getSize();
-    const fontSize = 30;
-    page.drawText('Creating PDFs in JavaScript is awesome!', {
-      x: 50,
-      y: height - 4 * fontSize,
-      size: fontSize,
-      font: timesRomanFont,
-      color: rgb(0, 0.53, 0.71),
+    const helveticaFont = await pdfDoc.embedFont('Helvetica');
+
+    // Draw text on the PDF
+    page.drawText('My Resume', {
+      x: 100,
+      y: 350,
+      size: 20,
+      font: helveticaFont,
+      color: rgb(0, 0, 0),
     });
 
+    // Add your personal information
+    const personalInfo = `
+      Title: ${value.title}
+      Name: ${value.name}
+      Summary: ${value.summary}
+      Github: ${value.github}
+      Twitter: ${value.twitter}
+      LinkedIn: ${value.linkedin}
+    `;
+
+    page.drawText(personalInfo, {
+      x: 100,
+      y: 320,
+      size: 12,
+      font: helveticaFont,
+      color: rgb(0, 0, 0),
+    });
+
+    // Add skills, experience, and education sections
+    const sections = [
+      { title: 'Skills', data: value.skills },
+      { title: 'Experience', data: value.experience },
+      { title: 'Education', data: value.education.map(edu => `${edu.degree} in ${edu.subject}`) },
+    ];
+
+    let offsetY = 250;
+
+    sections.forEach(section => {
+      page.drawText(section.title, {
+        x: 100,
+        y: offsetY,
+        size: 16,
+        font: helveticaFont,
+        color: rgb(0, 0.53, 0.71),
+      });
+
+      offsetY -= 20;
+
+      section.data.forEach(item => {
+        page.drawText(item, {
+          x: 100,
+          y: offsetY,
+          size: 12,
+          font: helveticaFont,
+          color: rgb(0, 0, 0),
+        });
+        offsetY -= 15;
+      });
+    });
+
+    // Save the PDF to a blob and create a download link
     const pdfBytes = await pdfDoc.save();
-
-    // Create a Blob from the PDF data
     const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-
-    // Create a URL for the Blob
     const pdfUrl = URL.createObjectURL(blob);
 
-    // Create a link to download the PDF
     const a = document.createElement('a');
     a.href = pdfUrl;
-    a.download = 'generated.pdf'; // You can set the file name here
+    a.download = 'resume.pdf'; // You can set the file name here
     a.style.display = 'none';
 
-    // Append the link to the document and trigger a click event to download the PDF
     document.body.appendChild(a);
     a.click();
 
-    // Clean up the link element
     document.body.removeChild(a);
   }
 
