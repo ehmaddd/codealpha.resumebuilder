@@ -93,83 +93,44 @@ function App() {
 
   async function createPdf() {
     const pdfDoc = await PDFDocument.create();
-    const page = pdfDoc.addPage([600, 400]); // You can adjust the page size as needed
-
+    const page = pdfDoc.addPage([600, 400]);
     const helveticaFont = await pdfDoc.embedFont('Helvetica');
 
-    // Draw text on the PDF
-    page.drawText('My Resume', {
-      x: 100,
-      y: 350,
-      size: 20,
-      font: helveticaFont,
-      color: rgb(0, 0, 0),
-    });
+    // ... Generate the PDF content ...
 
-    // Add your personal information
-    const personalInfo = `
-      Title: ${value.title}
-      Name: ${value.name}
-      Summary: ${value.summary}
-      Github: ${value.github}
-      Twitter: ${value.twitter}
-      LinkedIn: ${value.linkedin}
-    `;
-
-    page.drawText(personalInfo, {
-      x: 100,
-      y: 320,
-      size: 12,
-      font: helveticaFont,
-      color: rgb(0, 0, 0),
-    });
-
-    // Add skills, experience, and education sections
-    const sections = [
-      { title: 'Skills', data: value.skills },
-      { title: 'Experience', data: value.experience },
-      { title: 'Education', data: value.education.map(edu => `${edu.degree} in ${edu.subject}`) },
-    ];
-
-    let offsetY = 250;
-
-    sections.forEach(section => {
-      page.drawText(section.title, {
-        x: 100,
-        y: offsetY,
-        size: 16,
-        font: helveticaFont,
-        color: rgb(0, 0.53, 0.71),
-      });
-
-      offsetY -= 20;
-
-      section.data.forEach(item => {
-        page.drawText(item, {
-          x: 100,
-          y: offsetY,
-          size: 12,
-          font: helveticaFont,
-          color: rgb(0, 0, 0),
-        });
-        offsetY -= 15;
-      });
-    });
-
-    // Save the PDF to a blob and create a download link
     const pdfBytes = await pdfDoc.save();
     const blob = new Blob([pdfBytes], { type: 'application/pdf' });
     const pdfUrl = URL.createObjectURL(blob);
 
-    const a = document.createElement('a');
-    a.href = pdfUrl;
-    a.download = 'resume.pdf'; // You can set the file name here
-    a.style.display = 'none';
+    // Create a container for the PDF viewer and close button
+    const pdfViewerContainer = document.createElement('div');
+    pdfViewerContainer.className = 'pdf-viewer-container';
 
-    document.body.appendChild(a);
-    a.click();
+    // Display the PDF in an iframe
+    const iframe = document.createElement('iframe');
+    iframe.src = pdfUrl;
+    iframe.style.width = '100%';
+    iframe.style.height = '500px'; // Adjust the height as needed
+    pdfViewerContainer.appendChild(iframe);
 
-    document.body.removeChild(a);
+    // Provide a download link for the user to save the PDF
+    const downloadLink = document.createElement('a');
+    downloadLink.href = pdfUrl;
+    downloadLink.download = 'resume.pdf'; // You can set the file name here
+    downloadLink.textContent = 'Download PDF';
+    pdfViewerContainer.appendChild(downloadLink);
+
+    // Create a close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Close';
+    closeButton.addEventListener('click', () => {
+      // Close the PDF viewer
+      document.body.removeChild(pdfViewerContainer);
+    });
+    pdfViewerContainer.appendChild(closeButton);
+
+    // Append the PDF viewer container to the body
+    document.body.appendChild(pdfViewerContainer);
   }
 
   const handleSubmit = (event) => {
