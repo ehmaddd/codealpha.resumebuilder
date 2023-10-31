@@ -8,6 +8,8 @@ function App() {
   const [edu, setEdu] = useState({degree: '', subject: ''});
   const [value, setValue] = useState({
     name: '',
+    headline: '',
+    email: '',
     summary: '',
     github: '',
     twitter: '',
@@ -103,16 +105,33 @@ function App() {
 
     // Personal Information
     page.drawText(`${value.name.toUpperCase()}`, {
-      x: 50,
+      x: 35,
       y,
-      size: 19,
+      size: 20,
+      font: timesRomanFont,
+      color: rgb(0, 0.47, 0.72),
+    });
+
+    page.drawText(`${value.headline.toUpperCase()}`, {
+      x: 370,
+      y,
+      size: 14,
       font: timesRomanFont,
       color: rgb(0, 0.47, 0.72),
     });
     y -= 20;
 
-    page.drawText(`Summary: ${value.summary}`, {
-      x: 50,
+    page.drawText(`${value.email}`, {
+      x: 270,
+      y,
+      size: 14,
+      font: timesRomanFont,
+      color: rgb(0, 0.47, 0.72),
+    });
+    y -= 30;
+
+    page.drawText(`${value.summary}`, {
+      x: 20,
       y,
       size: 12,
       font: helveticaFont,
@@ -223,7 +242,9 @@ function App() {
       <div class="top-div">
         <div class="personal-div">
           <h2>Personal Information</h2>
-          <input type="text" name="name" value={value.name} placeholder="Name" onChange={(e) => setValue({ ...value, name: e.target.value })} />
+          <input type="text" name="name" maxlength="20" value={value.name} placeholder="Name" onChange={(e) => setValue({ ...value, name: e.target.value })} />
+          <input type="text" name="name" maxlength="25" value={value.headline} placeholder="Headline" onChange={(e) => setValue({ ...value, headline: e.target.value })} />
+          <input type="text" name="name" maxlength="20" value={value.email} placeholder="email address" onChange={(e) => setValue({ ...value, email: e.target.value })} />
           <textarea name="summary" value={value.summary} placeholder="Summary" onChange={(e) => setValue({ ...value, summary: e.target.value })} />
         </div>
 
