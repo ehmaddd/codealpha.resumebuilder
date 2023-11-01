@@ -132,11 +132,12 @@ function App() {
     y -= 30;
 
     page.drawText(`${value.summary}`, {
-      x: 20,
+      x: 35,
       y,
       size: 12,
       font: helveticaFont,
       color: rgb(0, 0, 0),
+      width: 400,
     });
     y -= 30;
 
