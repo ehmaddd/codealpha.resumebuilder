@@ -113,7 +113,7 @@ function App() {
     });
     y -=20;
 
-    page.drawText(`${value.headline.toUpperCase()}`, {
+    page.drawText(`${value.headline}`, {
       x: 35,
       y,
       size: 14,
@@ -125,7 +125,7 @@ function App() {
     page.drawText(`${value.email}`, {
       x: 35,
       y,
-      size: 14,
+      size: 12,
       font: timesRomanFont,
       color: rgb(0, 0, 0.5),
     });

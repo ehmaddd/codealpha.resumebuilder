@@ -1,6 +1,5 @@
 body {
-  background-image: url("./assets/images/bg.png");
-  background-size: cover;
+  background-color:dimgrey;
 }
 
 .App {
@@ -35,7 +34,7 @@ h2 {
   flex-direction: column;
   width: 21rem;
   padding: 0 2rem 2rem 2rem;
-  background-color: darkolivegreen;
+  background-color: cadetblue;
 }
 
 .personal-div input,textarea {
@@ -59,7 +58,7 @@ h2 {
   flex-direction: column;
   width: 21rem;
   padding: 0 2rem 2rem 2rem;
-  background-color: darkcyan;
+  background-color: cadetblue;
 }
 
 .skills-div input:focus {
@@ -113,7 +112,7 @@ h2 {
   flex-direction: column;
   width: 21rem;
   padding: 0 2rem 2rem 2rem;
-  background-color:darkgreen;
+  background-color: cadetblue;
 }
 
 .education-div select {
@@ -132,7 +131,7 @@ h2 {
   flex-direction: column;
   width: 21rem;
   padding: 0 2rem 2rem 2rem;
-  background-color:darkslategrey;
+  background-color: cadetblue;
 }
 
 .social-div input {
@@ -151,7 +150,7 @@ h2 {
   flex-direction: column;
   width: 21rem;
   padding: 0 2rem 2rem 2rem;
-  background-color:darkgreen;
+  background-color: cadetblue;
 }
 
 .summary-div select {
