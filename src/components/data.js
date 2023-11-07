@@ -1,23 +1,16 @@
 const data = [
     {
       personalinfo: {
-        fullName: "", // Combine first name and last name
+        fullName: "",
         contactNumber: "",
         emailAddress: "",
-        physicalAddress: "", // Optional
-        linkedInProfile: "", // Optional
-        websiteOrPortfolio: "", // Optional
+        physicalAddress: "",
+        linkedIn: "",
+        websiteAddress: "",
       },
     },
     {
-      webpresence: {
-        linkedIn: "",
-        facebook: "",
-        twitter: "",
-        github: "",
-        personalWebsite: "",
-        otherReference: "",
-      },
+      summary: ''
     },
     {
       experience: {

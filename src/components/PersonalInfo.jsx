@@ -43,7 +43,7 @@ const PersonalInfo = () => {
           </div>
           <div>
             <span className="bull">&bull;</span>
-            <label className="lbl">What is your Phone number<p className="mandatory">*</p></label>
+            <label className="lbl">... your Contact number<p className="mandatory">*</p></label>
             <input
               type="text"
               id="contactNumber"
@@ -54,7 +54,7 @@ const PersonalInfo = () => {
           </div>
           <div>
             <span className="bull">&bull;</span>
-            <label className="lbl">What is your Email Address<p className="mandatory">*</p></label>
+            <label className="lbl">... your Email Address<p className="mandatory">*</p></label>
             <input
               type="text"
               id="emailAddress"
@@ -65,7 +65,7 @@ const PersonalInfo = () => {
           </div>
           <div>
             <span className="bull">&bull;</span>
-            <label className="lbl">What is your Physical Address (optional)</label>
+            <label className="lbl">... your city, country<p className="mandatory">*</p></label>
             <input
               type="text"
               id="physicalAddress"
@@ -76,23 +76,23 @@ const PersonalInfo = () => {
           </div>
           <div>
             <span className="bull">&bull;</span>
-            <label className="lbl">What is your LinkedIn Profile (optional)</label>
+            <label className="lbl">... your LinkedIn Profile</label>
             <input
               type="text"
-              id="linkedInProfile"
-              name="linkedInProfile"
-              value={formData.linkedInProfile}
+              id="linkedIn"
+              name="linkedIn"
+              value={formData.linkedIn}
               onChange={handleInputChange}
             />
           </div>
           <div>
             <span className="bull">&bull;</span>
-            <label className="lbl">What is your Website or Portfolio (optional)</label>
+            <label className="lbl">... your Website/Portfolio</label>
             <input
               type="text"
-              id="websiteOrPortfolio"
-              name="websiteOrPortfolio"
-              value={formData.websiteOrPortfolio}
+              id="websiteAddress"
+              name="websiteAddress"
+              value={formData.websiteAddress}
               onChange={handleInputChange}
             />
           </div>
@@ -105,7 +105,7 @@ const PersonalInfo = () => {
         <button className="saveButton dim">
           S A V E
         </button>
-        <Link to="/web" className="nextButton" onClick={handleSaveData}>
+        <Link to="/summary" className="nextButton" onClick={handleSaveData}>
           NEXT
         </Link>
       </div>
