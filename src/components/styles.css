@@ -1,0 +1,176 @@
+body {
+  background-color: #f3f7ff;
+}
+
+h1 {
+  color: #0d2461;
+}
+
+.mandatory {
+  display: inline;
+  color: red;
+}
+
+.lbl {
+  color: navy;
+  font-weight: bold;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+input {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  display: block;
+  width: 95%;
+  height: 2rem;
+}
+
+select {
+  margin-top: 1.5rem;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  height: 2rem;
+}
+
+.main-div {
+  width: 50%;
+  margin: auto;
+}
+
+.container-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  padding: 2rem 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.backButton {
+  background-color: #0d2461;
+  color: white;
+  border: none;
+  height: 1.8rem;
+  float: right;
+  width: 10rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding-top: 0.3rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.saveButton {
+  background-color: #3abb69;
+  color: white;
+  border: none;
+  height: 2.3rem;
+  float: right;
+  width: 10rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding-top: 0.6rem;
+  padding-bottom: 0.8rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.saveButton:hover {
+
+}
+
+.nextButton {
+  background-color: #0d2461;
+  color: white;
+  border: none;
+  height: 1.8rem;
+  float: right;
+  width: 10rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding-top: 0.3rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.finishButton {
+  background-color: red;
+  color: white;
+  border: none;
+  height: 1.8rem;
+  float: right;
+  width: 10rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding-top: 0.3rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.dim {
+  visibility: hidden;
+}
+
+.bull {
+  color: #3abb69;
+  font-size:xxx-large;
+  height: 1rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+  vertical-align: -0.4rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+#yearsOfExperience {
+  display: block;
+  width: 95%;
+  height: 2.5rem;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.domain-div {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.domains {
+  margin-left: 2rem;
+}
+
+.domain-div > * {
+  width: auto;
+  margin-right: 1rem;
+  height: 1rem;
+}
+
+.domain-div > input {
+  margin: 1rem 1rem 0 0;
+}
+
+.domain-div > label {
+  margin-top: 0.7rem;
+}
+
+@media (max-width: 975px) {
+  .main-div {
+    width: 85%;
+  }
+}
