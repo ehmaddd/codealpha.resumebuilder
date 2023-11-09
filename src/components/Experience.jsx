@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import data from "./data";
 import './styles.css';
 
@@ -130,15 +131,15 @@ const Experience = () => {
       </form>
     </div>
     <div className="buttons">
-      <a href="#" className="backButton">
+      <Link to="/summary" className="backButton" onClick={handleSaveData}>
         BACK
-      </a>
+      </Link>
       <button className="saveButton">
         S A V E
       </button>
-      <a href="#" className="finishButton">
+      <Link to="#" className="finishButton" onClick={handleSaveData}>
         FINISH
-      </a>
+      </Link>
     </div>
   </div>
   );
