@@ -110,8 +110,8 @@ const Experience = () => {
         <button className="saveButton" onClick={handleAddExperience}>
           ADD NEW
         </button>
-        <Link to="#" className="nextButton" onClick={handleSaveData}>
-          FINISH
+        <Link to="/edu" className="nextButton" onClick={handleSaveData}>
+          NEXT
         </Link>
       </div>
     </div>
