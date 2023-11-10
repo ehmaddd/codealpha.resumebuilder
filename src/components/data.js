@@ -13,19 +13,6 @@ const data = [
     summary: '',
   },
   {
-    skills: {
-      yearsOfExperience: "null",
-      expertiseDomains: {
-        frontEnd: false,
-        backEnd: false,
-        databases: false,
-        algorithms: false,
-        architectures: false,
-      },
-      otherSkills: "",
-    },
-  },
-  {
     workExperiences: [
       {
         company: "",
