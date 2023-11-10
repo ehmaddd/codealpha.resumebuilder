@@ -1,0 +1,23 @@
+.exp-cat {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .exp-cat label {
+    width: 18%;
+    margin: auto;
+  }
+
+  .exp-cat input {
+    width: 85%;
+    margin-right: 5%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .exp-resp {
+    width: 78%;
+    margin-left: 4%;
+    margin-right: 5%;
+    border: 1px solid lightgrey;
+  }

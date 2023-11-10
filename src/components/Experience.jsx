@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import data from "./data";
-import './styles.css';
+import './Experience.css';
 
 const Experience = () => {
   const [formData, setFormData] = useState(data[2]?.experience || {});
@@ -68,15 +68,15 @@ const Experience = () => {
             <h2>Work Experience</h2>
             {workExperiences.map((experience, index) => (
               <div key={index} className="work-experience">
-                <div>
+                <div className="exp-cat">
+                  <label>Company</label>
                   <input
                     type="text"
                     value={experience.company}
-                    placeholder="Company"
                     onChange={(e) => handleInputChange(index, 'company', e.target.value)}
                   />
                 </div>
-                <div>
+                <div className="exp-cat">
                   <label>Job Title</label>
                   <input
                     type="text"
@@ -84,7 +84,7 @@ const Experience = () => {
                     onChange={(e) => handleInputChange(index, 'jobTitle', e.target.value)}
                   />
                 </div>
-                <div>
+                <div className="exp-cat">
                   <label>Start Date</label>
                   <input
                     type="text"
@@ -92,7 +92,7 @@ const Experience = () => {
                     onChange={(e) => handleInputChange(index, 'startDate', e.target.value)}
                   />
                 </div>
-                <div>
+                <div className="exp-cat">
                   <label>End Date</label>
                   <input
                     type="text"
@@ -100,10 +100,9 @@ const Experience = () => {
                     onChange={(e) => handleInputChange(index, 'endDate', e.target.value)}
                   />
                 </div>
-                <div>
-                  <textarea
-                  placeholder="Responsibilities">
-                    Responsibilities
+                <div className="exp-cat">
+                  <label>Resonsibilities</label>
+                  <textarea className="exp-resp">
                   </textarea>
                 </div>
                 <button type="button" onClick={() => handleRemoveExperience(index)}>
