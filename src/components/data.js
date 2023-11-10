@@ -24,6 +24,17 @@ const data = [
       },
     ],
   },
+  {
+    education: [
+      {
+        institution: "",
+        degree: "",
+        major: "",
+        graduationDate: "",
+        honorsAwards: "",
+      },
+    ],
+  },
 ];
 
 export default data;

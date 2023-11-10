@@ -53,7 +53,6 @@ const Education = () => {
       <div className="container-div">
         <form>
           <div>
-            <h2>Educational Background</h2>
             {educations.map((education, index) => (
               <div key={index} className="education">
                 <div className="edu-cat">
@@ -81,7 +80,7 @@ const Education = () => {
                   />
                 </div>
                 <div className="edu-cat">
-                  <label>Graduation Date</label>
+                  <label>Graduation</label>
                   <input
                     type="date"
                     value={education.graduationDate}
@@ -89,7 +88,7 @@ const Education = () => {
                   />
                 </div>
                 <div className="edu-cat">
-                  <label>Honors/Awards</label>
+                  <label>Awards</label>
                   <input
                     type="text"
                     value={education.honorsAwards}
@@ -105,7 +104,7 @@ const Education = () => {
         </form>
       </div>
       <div className="buttons">
-        <Link to="/work-experience" className="backButton" onClick={handleSaveData}>
+        <Link to="/exp" className="backButton" onClick={handleSaveData}>
           BACK
         </Link>
         <button className="saveButton" onClick={handleAddEducation}>

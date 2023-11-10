@@ -1,0 +1,42 @@
+.edu-cat {
+    display: flex;
+    flex-direction: row;
+}
+
+.edu-cat label {
+  width: 18%;
+  margin: auto;
+}
+
+.edu-cat input {
+  width: 85%;
+  margin-right: 5%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.edu-resp {
+  width: 78%;
+  margin-left: 4%;
+  margin-right: 5%;
+  border: 1px solid lightgrey;
+}
+
+.work-experience {
+  border: 1px solid grey;
+  border-radius: 8px;
+  background-color: beige;
+  padding: 4%;
+}
+
+.del-edu {
+  background-color: red;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+
+.del-edu:hover {
+  cursor: pointer;
+  box-shadow: slategrey;
+}

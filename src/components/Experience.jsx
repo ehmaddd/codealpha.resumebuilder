@@ -22,7 +22,6 @@ const Experience = () => {
       responsibilities: [],
     };
 
-    // Use local state to keep track of multiple experiences
     setWorkExperiences([...workExperiences, newExperience]);
   };
 
