@@ -1,4 +1,3 @@
-// Experience.js
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import data from "./data";
@@ -54,7 +53,6 @@ const Experience = () => {
       <div className="container-div">
         <form>
           <div>
-            <h2>Work Experience</h2>
             {workExperiences.map((experience, index) => (
               <div key={index} className="work-experience">
                 <div className="exp-cat">
