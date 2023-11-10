@@ -88,7 +88,7 @@ const Education = () => {
                   />
                 </div>
                 <div className="edu-cat">
-                  <label>Awards</label>
+                  <label>Distinctions</label>
                   <input
                     type="text"
                     value={education.honorsAwards}

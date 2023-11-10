@@ -87,7 +87,7 @@ const Experience = () => {
                   />
                 </div>
                 <div className="exp-cat">
-                  <label>Resonsibilities</label>
+                  <label>Attainments</label>
                   <textarea
                     className="exp-resp"
                     defaultValue={experience.responsibilities}

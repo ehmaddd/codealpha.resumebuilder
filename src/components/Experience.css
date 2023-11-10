@@ -17,15 +17,15 @@
 
 .exp-resp {
   width: 78%;
-  margin-left: 4%;
+  margin-left: 3.85%;
   margin-right: 5%;
+  height: 3rem;
   border: 1px solid lightgrey;
 }
 
 .work-experience {
   border: 1px solid grey;
   border-radius: 8px;
-  background-color: beige;
   padding: 4%;
 }
 
