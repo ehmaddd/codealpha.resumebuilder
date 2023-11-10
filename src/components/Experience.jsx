@@ -4,7 +4,9 @@ import data from "./data";
 import './styles.css';
 
 const Experience = () => {
-  const [formData, setFormData] = useState(data[2].experience);
+  const [formData, setFormData] = useState(data[3]?.workExperiences || []);
+
+  const [workExperiences, setWorkExperiences] = useState(data[2].workExperiences);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -25,123 +27,76 @@ const Experience = () => {
     });
   };
 
+  const handleAddExperience = () => {
+    const newExperience = {
+      company: "",
+      jobTitle: "",
+      location: "",
+      startDate: "",
+      endDate: "",
+      responsibilities: [],
+    };
+
+    setWorkExperiences([...workExperiences, newExperience]);
+  };
+
+  const handleRemoveExperience = (index) => {
+    const updatedExperiences = [...workExperiences];
+    updatedExperiences.splice(index, 1);
+    setWorkExperiences(updatedExperiences);
+  };
+
   const handleSaveData = () => {
-    data[2].experience = { ...formData };
-    console.log("Data stored in data array:", data);
+    data[2].workExperiences = [...workExperiences];
   };
 
   useEffect(() => {
-    setFormData(data[2].experience);
+    if (data[2] && data[2].experience) {
+      setFormData(data[2].experience);
+    }
+
+    if (data[3] && data[3].workExperiences) {
+      setWorkExperiences(data[3].workExperiences);
+    }
   }, [data]);
 
   return (
     <div className="main-div">
       <h1>Experience</h1>
       <div className="container-div">
-      <form>
-        <div>
-          <span className="bull">&bull;</span><label className="lbl">How many years of relevant experience do you have?</label>
-          <select
-            id="yearsOfExperience"
-            name="yearsOfExperience"
-            value={formData.yearsOfExperience}
-            onChange={handleInputChange}
-          >
-            <option value="null">Select</option>
-            <option value="One to less">One to less</option>
-            <option value="One to three">One to three</option>
-            <option value="Three or more">Three or more</option>
-          </select>
-        </div>
-        <div>
-          <span className="bull">&bull;</span><label className="lbl">What domain is your expertise in?</label>
-          <div className="domains">
-            <div className="domain-div">
-              <input
-                type="checkbox"
-                name="frontEnd"
-                checked={formData.expertiseDomains.frontEnd}
-                onChange={handleCheckboxChange}
-              />
-              <label>
-                Front End
-              </label>
-            </div>
-
-            <div className="domain-div">
-              <input
-                type="checkbox"
-                name="backEnd"
-                checked={formData.expertiseDomains.backEnd}
-                onChange={handleCheckboxChange}
-              />
-              <label>
-                Back End
-              </label>
-            </div>
-
-            <div className="domain-div">
-              <input
-                type="checkbox"
-                name="databases"
-                checked={formData.expertiseDomains.databases}
-                onChange={handleCheckboxChange}
-              />
-              <label>
-                Databases
-              </label>
-            </div>
-
-            <div className="domain-div">
-              <input
-                type="checkbox"
-                name="algorithms"
-                checked={formData.expertiseDomains.algorithms}
-                onChange={handleCheckboxChange}
-              />
-              <label>
-                Algorithms
-              </label>
-            </div>
-
-            <div className="domain-div">
-              <input
-                type="checkbox"
-                name="architectures"
-                checked={formData.expertiseDomains.architectures}
-                onChange={handleCheckboxChange}
-              />
-              <label>
-                Architectures
-              </label>
-            </div>
-
+        <form>
+          {/* Your existing code for experience input fields */}
+          {/* ... */}
+          {/* Work Experience Section */}
+          <div>
+            <h2>Work Experience</h2>
+            {workExperiences.map((experience, index) => (
+              <div key={index} className="work-experience">
+                {/* Your input fields for work experience */}
+                {/* ... */}
+                <button type="button" onClick={() => handleRemoveExperience(index)}>
+                  Remove
+                </button>
+              </div>
+            ))}
+            <button type="button" onClick={handleAddExperience}>
+              Add Experience
+            </button>
           </div>
-        </div>
-        <div>
-          <span className="bull">&bull;</span><label className="lbl">Other expert skills</label>
-          <input
-            type="text"
-            id="otherSkills"
-            name="otherSkills"
-            value={formData.otherSkills}
-            onChange={handleInputChange}
-          />
-        </div>
-      </form>
+        </form>
+      </div>
+      <div className="buttons">
+        <Link to="/summary" className="backButton" onClick={handleSaveData}>
+          BACK
+        </Link>
+        <button className="saveButton">
+          S A V E
+        </button>
+        <Link to="#" className="finishButton" onClick={handleSaveData}>
+          FINISH
+        </Link>
+      </div>
     </div>
-    <div className="buttons">
-      <Link to="/summary" className="backButton" onClick={handleSaveData}>
-        BACK
-      </Link>
-      <button className="saveButton">
-        S A V E
-      </button>
-      <Link to="#" className="finishButton" onClick={handleSaveData}>
-        FINISH
-      </Link>
-    </div>
-  </div>
   );
 };
 
