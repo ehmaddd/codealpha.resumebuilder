@@ -14,17 +14,6 @@ const Experience = () => {
     setWorkExperiences(updatedExperiences);
   };
 
-  const handleCheckboxChange = (e) => {
-    const { name, checked } = e.target;
-    setFormData({
-      ...formData,
-      expertiseDomains: {
-        ...formData.expertiseDomains,
-        [name]: checked,
-      },
-    });
-  };
-
   const handleAddExperience = () => {
     const newExperience = {
       company: "",
@@ -102,11 +91,14 @@ const Experience = () => {
                 </div>
                 <div className="exp-cat">
                   <label>Resonsibilities</label>
-                  <textarea className="exp-resp">
-                  </textarea>
+                  <textarea
+                    className="exp-resp"
+                    defaultValue={experience.responsibilities}
+                    onChange={(e) => handleInputChange(index, 'responsibilities', e.target.value)}
+                  ></textarea>
                 </div>
-                <button type="button" onClick={() => handleRemoveExperience(index)}>
-                  Remove
+                <button type="button" className="del-edu" onClick={() => handleRemoveExperience(index)}>
+                  Delete
                 </button>
               </div>
             ))}
@@ -120,7 +112,7 @@ const Experience = () => {
         <button className="saveButton" onClick={handleAddExperience}>
           ADD NEW
         </button>
-        <Link to="#" className="finishButton" onClick={handleSaveData}>
+        <Link to="#" className="nextButton" onClick={handleSaveData}>
           FINISH
         </Link>
       </div>
