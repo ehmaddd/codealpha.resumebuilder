@@ -110,9 +110,6 @@ const Experience = () => {
                 </button>
               </div>
             ))}
-            <button type="button" onClick={handleAddExperience}>
-              Add Experience
-            </button>
           </div>
         </form>
       </div>
@@ -120,8 +117,8 @@ const Experience = () => {
         <Link to="/summary" className="backButton" onClick={handleSaveData}>
           BACK
         </Link>
-        <button className="saveButton">
-          S A V E
+        <button className="saveButton" onClick={handleAddExperience}>
+          ADD NEW
         </button>
         <Link to="#" className="finishButton" onClick={handleSaveData}>
           FINISH

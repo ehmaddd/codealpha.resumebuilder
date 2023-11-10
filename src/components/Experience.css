@@ -21,3 +21,10 @@
     margin-right: 5%;
     border: 1px solid lightgrey;
   }
+
+  .work-experience {
+    border: 1px solid grey;
+    border-radius: 8px;
+    background-color: beige;
+    padding: 4%;
+  }
