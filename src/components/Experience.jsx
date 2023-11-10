@@ -87,7 +87,7 @@ const Experience = () => {
                 <div className="exp-cat">
                   <label>Start Date</label>
                   <input
-                    type="text"
+                    type="date"
                     value={experience.startDate}
                     onChange={(e) => handleInputChange(index, 'startDate', e.target.value)}
                   />
@@ -95,7 +95,7 @@ const Experience = () => {
                 <div className="exp-cat">
                   <label>End Date</label>
                   <input
-                    type="text"
+                    type="date"
                     value={experience.endDate}
                     onChange={(e) => handleInputChange(index, 'endDate', e.target.value)}
                   />
