@@ -1,19 +1,17 @@
+// Experience.js
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import data from "./data";
 import './styles.css';
 
 const Experience = () => {
-  const [formData, setFormData] = useState(data[3]?.workExperiences || []);
+  const [formData, setFormData] = useState(data[2]?.experience || {});
+  const [workExperiences, setWorkExperiences] = useState(data[2]?.workExperiences || []);
 
-  const [workExperiences, setWorkExperiences] = useState(data[2].workExperiences);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+  const handleInputChange = (index, key, value) => {
+    const updatedExperiences = [...workExperiences];
+    updatedExperiences[index][key] = value;
+    setWorkExperiences(updatedExperiences);
   };
 
   const handleCheckboxChange = (e) => {
@@ -31,12 +29,12 @@ const Experience = () => {
     const newExperience = {
       company: "",
       jobTitle: "",
-      location: "",
       startDate: "",
       endDate: "",
       responsibilities: [],
     };
 
+    // Use local state to keep track of multiple experiences
     setWorkExperiences([...workExperiences, newExperience]);
   };
 
@@ -47,6 +45,7 @@ const Experience = () => {
   };
 
   const handleSaveData = () => {
+    data[2].experience = { ...formData };
     data[2].workExperiences = [...workExperiences];
   };
 
@@ -55,8 +54,8 @@ const Experience = () => {
       setFormData(data[2].experience);
     }
 
-    if (data[3] && data[3].workExperiences) {
-      setWorkExperiences(data[3].workExperiences);
+    if (data[2] && data[2].workExperiences) {
+      setWorkExperiences(data[2].workExperiences);
     }
   }, [data]);
 
@@ -65,15 +64,48 @@ const Experience = () => {
       <h1>Experience</h1>
       <div className="container-div">
         <form>
-          {/* Your existing code for experience input fields */}
-          {/* ... */}
-          {/* Work Experience Section */}
           <div>
             <h2>Work Experience</h2>
             {workExperiences.map((experience, index) => (
               <div key={index} className="work-experience">
-                {/* Your input fields for work experience */}
-                {/* ... */}
+                <div>
+                  <input
+                    type="text"
+                    value={experience.company}
+                    placeholder="Company"
+                    onChange={(e) => handleInputChange(index, 'company', e.target.value)}
+                  />
+                </div>
+                <div>
+                  <label>Job Title</label>
+                  <input
+                    type="text"
+                    value={experience.jobTitle}
+                    onChange={(e) => handleInputChange(index, 'jobTitle', e.target.value)}
+                  />
+                </div>
+                <div>
+                  <label>Start Date</label>
+                  <input
+                    type="text"
+                    value={experience.startDate}
+                    onChange={(e) => handleInputChange(index, 'startDate', e.target.value)}
+                  />
+                </div>
+                <div>
+                  <label>End Date</label>
+                  <input
+                    type="text"
+                    value={experience.endDate}
+                    onChange={(e) => handleInputChange(index, 'endDate', e.target.value)}
+                  />
+                </div>
+                <div>
+                  <textarea
+                  placeholder="Responsibilities">
+                    Responsibilities
+                  </textarea>
+                </div>
                 <button type="button" onClick={() => handleRemoveExperience(index)}>
                   Remove
                 </button>
