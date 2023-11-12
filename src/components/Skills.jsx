@@ -7,6 +7,45 @@ const Skills = () => {
   const [technicalSkills, setTechnicalSkills] = useState(data[4]?.skills?.technicalSkills || []);
   const [softSkills, setSoftSkills] = useState(data[4]?.skills?.softSkills || []);
 
+  const handleInputChange = (category, index, value) => {
+    if (category === 'technical') {
+      const updatedTechnicalSkills = [...technicalSkills];
+      updatedTechnicalSkills[index] = value;
+      setTechnicalSkills(updatedTechnicalSkills);
+    } else if (category === 'soft') {
+      const updatedSoftSkills = [...softSkills];
+      updatedSoftSkills[index] = value;
+      setSoftSkills(updatedSoftSkills);
+    }
+  };
+
+  const handleAddSkill = (category) => {
+    if (category === 'technical') {
+      setTechnicalSkills([...technicalSkills, '']);
+    } else if (category === 'soft') {
+      setSoftSkills([...softSkills, '']);
+    }
+  };
+
+  const handleRemoveSkill = (category, index) => {
+    if (category === 'technical') {
+      const updatedTechnicalSkills = [...technicalSkills];
+      updatedTechnicalSkills.splice(index, 1);
+      setTechnicalSkills(updatedTechnicalSkills);
+    } else if (category === 'soft') {
+      const updatedSoftSkills = [...softSkills];
+      updatedSoftSkills.splice(index, 1);
+      setSoftSkills(updatedSoftSkills);
+    }
+  };
+
+  const handleSaveData = () => {
+    data[4].skills = {
+      technicalSkills: [...technicalSkills],
+      softSkills: [...softSkills],
+    };
+  };
+
   return (
     <div className="main-div">
       <h1>Skills</h1>
