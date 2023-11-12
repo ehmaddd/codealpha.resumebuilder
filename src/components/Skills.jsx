@@ -46,6 +46,13 @@ const Skills = () => {
     };
   };
 
+  useEffect(() => {
+    if (data[4] && data[4].skills) {
+      setTechnicalSkills(data[4].skills.technicalSkills);
+      setSoftSkills(data[4].skills.softSkills);
+    }
+  }, [data]);
+
   return (
     <div className="main-div">
       <h1>Skills</h1>
