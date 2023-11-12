@@ -110,8 +110,8 @@ const Education = () => {
         <button className="saveButton" onClick={handleAddEducation}>
           ADD NEW
         </button>
-        <Link to="#" className="nextButton" onClick={handleSaveData}>
-          FINISH
+        <Link to="/skills" className="nextButton" onClick={handleSaveData}>
+          NEXT
         </Link>
       </div>
     </div>
