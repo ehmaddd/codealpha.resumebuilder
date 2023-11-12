@@ -1,0 +1,20 @@
+.skill-button {
+  background-color: #3abb69;
+  color: white;
+  border: none;
+  height: 2.3rem;
+  width: 10rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding-top: 0.6rem;
+  padding-bottom: 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.skill-div {
+  border: 1px solid lightslategray;
+  border-radius: 8px;
+  padding: 0.5rem;
+}

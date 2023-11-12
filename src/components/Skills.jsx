@@ -57,7 +57,7 @@ const Skills = () => {
     <div className="main-div">
       <h1>Skills</h1>
       <div className="container-div">
-        <div>
+        <div className="skill-div">
           <h2>Technical Skills</h2>
           {technicalSkills.map((skill, index) => (
             <div key={index} className="skill">
@@ -71,11 +71,11 @@ const Skills = () => {
               </button>
             </div>
           ))}
-          <button type="button" onClick={() => handleAddSkill('technical')}>
+          <button type="button" className="skill-button" onClick={() => handleAddSkill('technical')}>
             Add Technical Skill
           </button>
         </div>
-        <div>
+        <div className="skill-div">
           <h2>Soft Skills</h2>
           {softSkills.map((skill, index) => (
             <div key={index} className="skill">
@@ -89,7 +89,7 @@ const Skills = () => {
               </button>
             </div>
           ))}
-          <button type="button" onClick={() => handleAddSkill('soft')}>
+          <button type="button" className="skill-button" onClick={() => handleAddSkill('soft')}>
             Add Soft Skill
           </button>
         </div>
