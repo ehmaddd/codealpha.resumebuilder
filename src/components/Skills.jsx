@@ -95,14 +95,14 @@ const Skills = () => {
         </div>
       </div>
       <div className="buttons">
-        <Link to="/summary" className="backButton" onClick={handleSaveData}>
+        <Link to="/edu" className="backButton" onClick={handleSaveData}>
           BACK
         </Link>
-        <button className="saveButton" onClick={handleSaveData}>
+        <button className="saveButton dim" onClick={handleSaveData}>
           SAVE
         </button>
-        <Link to="/nextPage" className="nextButton" onClick={handleSaveData}>
-          NEXT
+        <Link to="/nextPage" className="finishButton" onClick={handleSaveData}>
+          FINISH
         </Link>
       </div>
     </div>
