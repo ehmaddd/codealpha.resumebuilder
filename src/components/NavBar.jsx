@@ -4,6 +4,7 @@ import PersonalInfo from './PersonalInfo';
 import Summary from './Summary';
 import Experience from './Experience';
 import Education from './Education';
+import Skills from './Skills';
 import './navbar.css';
 
 const Navbar = () => {
