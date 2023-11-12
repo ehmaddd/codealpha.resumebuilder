@@ -17,6 +17,7 @@ const Navbar = () => {
         <p><span className={activePath === '/summary' ? 'active' : 'passive'}>2</span>Summary</p>
         <p><span className={activePath === '/exp' ? 'active' : 'passive'}>3</span>Experience</p>
         <p><span className={activePath === '/edu' ? 'active' : 'passive'}>4</span>Education</p>
+        <p><span className={activePath === '/skills' ? 'active' : 'passive'}>5</span>Skills</p>
       </nav>
       <Routes>
         <Route path="/" element={<PersonalInfo />} />
