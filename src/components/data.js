@@ -35,6 +35,12 @@ const data = [
       },
     ],
   },
+  {
+    skills: {
+      technicalSkills: [],
+      softSkills: [],
+    },
+  },
 ];
 
 export default data;
