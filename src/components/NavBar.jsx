@@ -24,6 +24,7 @@ const Navbar = () => {
         <Route path="/summary" element={<Summary />} />
         <Route path="/exp" element={<Experience />} />
         <Route path="/edu" element={<Education />} />
+        <Route path="/skills" element={<Skills />} />
       </Routes>
     </>
   );
