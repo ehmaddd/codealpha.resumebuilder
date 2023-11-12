@@ -67,12 +67,12 @@ const Skills = () => {
                 onChange={(e) => handleInputChange('technical', index, e.target.value)}
               />
               <button type="button" onClick={() => handleRemoveSkill('technical', index)}>
-                Remove
+                -
               </button>
             </div>
           ))}
           <button type="button" className="skill-button" onClick={() => handleAddSkill('technical')}>
-            Add Technical Skill
+            +
           </button>
         </div>
         <div className="skill-div">
@@ -85,12 +85,12 @@ const Skills = () => {
                 onChange={(e) => handleInputChange('soft', index, e.target.value)}
               />
               <button type="button" onClick={() => handleRemoveSkill('soft', index)}>
-                Remove
+                -
               </button>
             </div>
           ))}
           <button type="button" className="skill-button" onClick={() => handleAddSkill('soft')}>
-            Add Soft Skill
+            +
           </button>
         </div>
       </div>
