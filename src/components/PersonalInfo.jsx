@@ -37,6 +37,7 @@ const PersonalInfo = () => {
               type="text"
               id="fullName"
               name="fullName"
+              required
               value={formData.fullName}
               onChange={handleInputChange}
             />
