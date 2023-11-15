@@ -65,9 +65,6 @@ const Certifications = () => {
                 </button>
               </div>
             ))}
-            <button type="button" onClick={handleAddCertification}>
-              Add Certification
-            </button>
           </div>
         </form>
       </div>
@@ -75,8 +72,8 @@ const Certifications = () => {
         <Link to="/skills" className="backButton" onClick={handleSaveData}>
           BACK
         </Link>
-        <button className="saveButton dim">
-          SAVE
+        <button type="button" className="saveButton" onClick={handleAddCertification}>
+          ADD
         </button>
         <Link to="#" className="finishButton">
           FINISH``
