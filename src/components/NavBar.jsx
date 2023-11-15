@@ -5,6 +5,7 @@ import Summary from './Summary';
 import Experience from './Experience';
 import Education from './Education';
 import Skills from './Skills';
+import Certifications from './Certifications';
 import './navbar.css';
 
 const Navbar = () => {
@@ -19,6 +20,7 @@ const Navbar = () => {
         <p><span className={activePath === '/exp' ? 'active' : 'passive'}>3</span>Experience</p>
         <p><span className={activePath === '/edu' ? 'active' : 'passive'}>4</span>Education</p>
         <p><span className={activePath === '/skills' ? 'active' : 'passive'}>5</span>Skills</p>
+        <p><span className={activePath === '/cert' ? 'active' : 'passive'}>6</span>Certifications</p>
       </nav>
       <Routes>
         <Route path="/" element={<PersonalInfo />} />
@@ -26,6 +28,7 @@ const Navbar = () => {
         <Route path="/exp" element={<Experience />} />
         <Route path="/edu" element={<Education />} />
         <Route path="/skills" element={<Skills />} />
+        <Route path="/cert" element={<Certifications />} />
       </Routes>
     </>
   );
