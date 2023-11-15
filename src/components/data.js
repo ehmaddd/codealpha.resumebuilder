@@ -27,11 +27,11 @@ const data = [
   {
     education: [
       {
-        institution: "",
-        degree: "",
+        institutionName: "",
+        degreeEarned: "",
         major: "",
         graduationDate: "",
-        honorsAwards: "",
+        honorsOrAwards: "",
       },
     ],
   },
@@ -40,6 +40,18 @@ const data = [
       technicalSkills: [],
       softSkills: [],
     },
+  },
+  {
+    certifications: [
+      {
+        name: "",
+        issuingOrganization: "",
+        dateOfCertification: "",
+        expirationDate: "",
+        credentialID: "",
+        details: "",
+      },
+    ],
   },
 ];
 
