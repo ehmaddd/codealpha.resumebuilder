@@ -48,11 +48,9 @@ const Certifications = () => {
       <div className="container-div">
         <form>
           <div>
-            <h2>Certifications</h2>
             {certifications.map((certification, index) => (
               <div key={index} className="certification">
                 <div className="cert-field">
-                  <label>Certification Name</label>
                   <input
                     type="text"
                     value={certification.name}
