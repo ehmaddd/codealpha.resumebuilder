@@ -76,7 +76,7 @@ const Certifications = () => {
           ADD
         </button>
         <Link to="#" className="finishButton">
-          FINISH``
+          FINISH
         </Link>
       </div>
     </div>
