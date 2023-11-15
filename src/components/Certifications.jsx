@@ -61,7 +61,7 @@ const Certifications = () => {
                 </div>
                 {/* Add similar input fields for issuingOrganization, dateOfCertification, etc. */}
                 <button type="button" onClick={() => handleRemoveCertification(index)}>
-                  Remove
+                  -
                 </button>
               </div>
             ))}

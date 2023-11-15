@@ -101,7 +101,7 @@ const Skills = () => {
         <button className="saveButton dim" onClick={handleSaveData}>
           SAVE
         </button>
-        <Link to="/cert" className="finishButton" onClick={handleSaveData}>
+        <Link to="/cert" className="nextButton" onClick={handleSaveData}>
           NEXT
         </Link>
       </div>
