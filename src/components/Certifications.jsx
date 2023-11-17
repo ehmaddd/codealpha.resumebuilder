@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import data from './data';
-import './Certifications.css';
+// import './Certifications.css';
 
 const Certifications = () => {
   const [certifications, setCertifications] = useState(data[5]?.certifications || []);
