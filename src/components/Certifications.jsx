@@ -47,23 +47,39 @@ const Certifications = () => {
       <h1>Certifications and Licenses</h1>
       <div className="container-div">
         <form>
-          <div>
-            {certifications.map((certification, index) => (
-              <div key={index} className="certification">
-                <div className="cert-field">
-                  <input
-                    type="text"
-                    value={certification.name}
-                    onChange={(e) => handleInputChange(index, 'name', e.target.value)}
-                  />
-                </div>
-                {/* Add similar input fields for issuingOrganization, dateOfCertification, etc. */}
-                <button type="button" onClick={() => handleRemoveCertification(index)}>
-                  -
-                </button>
+        <div>
+          {certifications.map((certification, index) => (
+            <div key={index} className="certification">
+              <div className="cert-field">
+                <input
+                  type="text"
+                  value={certification.name}
+                  onChange={(e) => handleInputChange(index, 'name', e.target.value)}
+                  placeholder="Certification Name"
+                />
               </div>
-            ))}
-          </div>
+              <div className="cert-field">
+                <input
+                  type="text"
+                  value={certification.issuingOrganization}
+                  onChange={(e) => handleInputChange(index, 'issuingOrganization', e.target.value)}
+                  placeholder="Issuing Organization"
+                />
+              </div>
+              <div className="cert-field">
+                <input
+                  type="date"
+                  value={certification.dateOfCertification}
+                  onChange={(e) => handleInputChange(index, 'dateOfCertification', e.target.value)}
+                  placeholder="Date of Certification"
+                />
+              </div>
+              <button type="button" onClick={() => handleRemoveCertification(index)}>
+                remove
+              </button>
+            </div>
+          ))}
+         </div>
         </form>
       </div>
       <div className="buttons">
