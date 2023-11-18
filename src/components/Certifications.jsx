@@ -75,7 +75,7 @@ const Certifications = () => {
                 />
               </div>
               <button type="button" onClick={() => handleRemoveCertification(index)}>
-                remove
+                delete
               </button>
             </div>
           ))}
