@@ -1,12 +1,22 @@
+.certification {
+  border: 1px solid grey;
+  border-radius: 8px;
+  padding: 4% 5%;
+}
+
 .certification button {
-    background-color: red;
-    color: white;
-    border: none;
-    height: 1.8rem;
-    margin: auto;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  background-color: red;
+  color: white;
+  border: none;
+  height: 1.8rem;
+  margin: 0.5rem auto auto auto;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input {
+  margin: 0;
+}
