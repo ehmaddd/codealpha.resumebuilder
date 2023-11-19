@@ -1,14 +1,14 @@
-import jsPDF from 'jspdf';
 import data from './data';
+import { useState } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';  // Fix the typo here
+import jsPDF from 'jspdf';
 
-const GeneratePdf = () => {
-  const pdf = new jsPDF();
-
+// Add content to the PDF
+const addContentToPDF = (pdf) => {
   // Add personal information
   pdf.text(`Full Name: ${data[0].personalinfo.fullName}`, 10, 10);
   pdf.text(`Contact Number: ${data[0].personalinfo.contactNumber}`, 10, 20);
   pdf.text(`Email Address: ${data[0].personalinfo.emailAddress}`, 10, 30);
-  // Add more personal information fields as needed
 
   // Add summary
   pdf.text(`Summary: ${data[1].summary}`, 10, 40);
@@ -37,7 +37,7 @@ const GeneratePdf = () => {
     const yPosition = 140 + index * 10;
     pdf.text(skill, 10, yPosition);
   });
-  // Add soft skills
+
   pdf.text('Soft Skills:', 10, 160);
   data[4].skills.softSkills.forEach((skill, index) => {
     const yPosition = 170 + index * 10;
@@ -52,8 +52,61 @@ const GeneratePdf = () => {
     pdf.text(`Issuing Organization: ${cert.issuingOrganization}`, 10, yPosition + 10);
     // Add more certification fields as needed
   });
+};
 
-  pdf.save('resume.pdf');
+const GeneratePdf = () => {
+  const [pdfPreview, setPdfPreview] = useState('');
+  const [pdfNumPages, setPdfNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  const generatePDF = () => {
+    const pdf = new jsPDF();
+
+    // Add content to the PDF
+    addContentToPDF(pdf);
+
+    // Convert the PDF content to a data URI
+    const pdfDataUri = pdf.output('datauristring');
+    setPdfNumPages(1);
+    setPageNumber(1);
+
+    setPdfPreview(pdfDataUri);
+  };
+
+  const handleSavePdf = () => {
+    const pdf = new jsPDF();
+
+    // Add content to the PDF (same content as in generatePDF function)
+    addContentToPDF(pdf);
+
+    // Save the PDF
+    pdf.save('resume.pdf');
+  };
+
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setPdfNumPages(numPages);
+  };
+
+  return (
+    <div>
+      <button onClick={generatePDF}>Generate PDF Preview</button>
+
+      {pdfPreview && (
+        <div>
+          {/* Use react-pdf components for the PDF viewer */}
+          <Document file={pdfPreview} onLoadSuccess={onDocumentLoadSuccess}>
+            <Page pageNumber={pageNumber} width={800} />
+          </Document>
+
+          <p>
+            Page {pageNumber} of {pdfNumPages}
+          </p>
+
+          <button onClick={handleSavePdf}>Save PDF</button>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default GeneratePdf;
