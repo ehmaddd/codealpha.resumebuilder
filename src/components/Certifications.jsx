@@ -89,7 +89,7 @@ const Certifications = () => {
         <button type="button" className="saveButton" onClick={handleAddCertification}>
           ADD
         </button>
-        <Link to="#" className="finishButton">
+        <Link to="/pdf" className="finishButton">
           FINISH
         </Link>
       </div>

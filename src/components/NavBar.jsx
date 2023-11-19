@@ -6,6 +6,7 @@ import Experience from './Experience';
 import Education from './Education';
 import Skills from './Skills';
 import Certifications from './Certifications';
+import GeneratePdf from './generatePDF';
 import './navbar.css';
 
 const Navbar = () => {
@@ -29,6 +30,7 @@ const Navbar = () => {
         <Route path="/edu" element={<Education />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/cert" element={<Certifications />} />
+        <Route path="/pdf" element={<GeneratePdf />} />
       </Routes>
     </>
   );
