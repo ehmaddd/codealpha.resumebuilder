@@ -12,9 +12,9 @@ function GeneratePDF() {
 
     setValue((prevState) => ({
       ...prevState,
-      skills: [...prevState.skills, skill],
+      skills: [...prevState.skills, value.skill],
     }));
-    setSkill('');
+    setValue.skills('');
   };
 
   const addExper = () => {
