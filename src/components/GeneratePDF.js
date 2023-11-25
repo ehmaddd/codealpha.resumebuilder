@@ -124,27 +124,6 @@ function GeneratePDF() {
     });
     y -= 30;
 
-  // Experience
-    page.drawText('Experience:', {
-      x: 50,
-      y,
-      size: 12,
-      font: helveticaFont,
-      color: rgb(0, 0, 0),
-    });
-    y -= 20;
-    value.experience.forEach((exp) => {
-      page.drawText(exp, {
-        x: 70,
-        y,
-        size: 12,
-        font: helveticaFont,
-        color: rgb(0, 0, 0),
-      });
-      y -= 20;
-    });
-    y -= 10;
-
   // Education
     page.drawText('Education:', {
       x: 50,
