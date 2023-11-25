@@ -124,27 +124,6 @@ function GeneratePDF() {
     });
     y -= 30;
 
-  // Skills
-    page.drawText('Skills:', {
-      x: 50,
-      y,
-      size: 12,
-      font: helveticaFont,
-      color: rgb(0, 0, 0),
-    });
-    y -= 20;
-    value.skills.forEach((skill) => {
-      page.drawText(skill, {
-        x: 70,
-        y,
-        size: 12,
-        font: helveticaFont,
-        color: rgb(0, 0, 0),
-      });
-      y -= 20;
-    });
-    y -= 10;
-
   // Experience
     page.drawText('Experience:', {
       x: 50,
