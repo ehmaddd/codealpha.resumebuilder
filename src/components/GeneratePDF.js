@@ -86,9 +86,6 @@ function GeneratePDF() {
     const helveticaFont = await pdfDoc.embedFont('Helvetica');
     const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
 
-    // Calculate the position for each piece of text
-    let y = page.getHeight() - 40; // Start below the top margin
-
     // Personal Information
     page.drawText(`${value.name.toUpperCase()}`, {
       x: 35,
