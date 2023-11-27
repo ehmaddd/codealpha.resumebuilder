@@ -124,30 +124,6 @@ function GeneratePDF() {
     });
     y -= 30;
 
-  // Education
-    page.drawText('Education:', {
-      x: 50,
-      y,
-      size: 12,
-      font: helveticaFont,
-      color: rgb(0, 0, 0),
-    });
-    y -= 20;
-    value.education.forEach((edu) => {
-      page.drawText(`${edu.degree} in ${edu.subject}`, {
-        x: 70,
-        y,
-        size: 12,
-        font: helveticaFont,
-        color: rgb(0, 0, 0),
-      });
-      y -= 20;
-    });
-
-    const pdfBytes = await pdfDoc.save();
-    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-    const pdfUrl = URL.createObjectURL(blob);
-
   // Create a container for the PDF viewer and close button
     const pdfViewerContainer = document.createElement('div');
     pdfViewerContainer.className = 'pdf-viewer-container';
