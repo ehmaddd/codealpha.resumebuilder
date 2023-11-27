@@ -139,13 +139,6 @@ function GeneratePDF() {
         });
         pdfViewerContainer.appendChild(closeButton);
 
-  // Display the PDF in an iframe
-    const iframe = document.createElement('iframe');
-    iframe.src = pdfUrl;
-    iframe.style.width = '100%';
-    iframe.style.height = '500px'; // Adjust the height as needed
-    pdfViewerContainer.appendChild(iframe);
-
   // Append the PDF viewer container to the body
     document.body.appendChild(pdfViewerContainer);
     window.scrollBy(0, 500);
