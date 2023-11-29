@@ -139,14 +139,6 @@ function GeneratePDF() {
         });
         pdfViewerContainer.appendChild(closeButton);
 
-  // Append the PDF viewer container to the body
-    document.body.appendChild(pdfViewerContainer);
-    window.scrollBy(0, 500);
-
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
 
   return (
     <form onSubmit={handleSubmit}>
