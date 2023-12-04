@@ -128,18 +128,6 @@ function GeneratePDF() {
     const pdfViewerContainer = document.createElement('div');
     pdfViewerContainer.className = 'pdf-viewer-container';
 
-  // Create a close button
-        const closeButton = document.createElement('button');
-        closeButton.classList.add('close-btn');
-        closeButton.textContent = 'C L O S E';
-        closeButton.addEventListener('click', () => {
-          submitBtn.style.display = "block";
-          // Close the PDF viewer
-          document.body.removeChild(pdfViewerContainer);
-        });
-        pdfViewerContainer.appendChild(closeButton);
-
-
   return (
     <form onSubmit={handleSubmit}>
       <div class="top-div">
