@@ -23,7 +23,9 @@ const styles = StyleSheet.create({
 });
 
 const MyDocument = () => (
+  <Document>
 
+  </Document>
 );
 
 function GeneratePDF() {
