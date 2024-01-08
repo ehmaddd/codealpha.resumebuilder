@@ -32,7 +32,13 @@ const MyDocument = () => (
         <Text style={styles.content}>Email: {data[0].personalinfo.emailAddress}</Text>
         {/* Add more personal info fields */}
       </View>
+      <View style={styles.section}>
+        <Text style={styles.heading}>Summary</Text>
+        <Text style={styles.content}>{data[1].summary}</Text>
+        {/* Add more summary content */}
+      </View>
 
+    </Page>
   </Document>
 );
 
