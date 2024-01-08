@@ -37,6 +37,17 @@ const MyDocument = () => (
         <Text style={styles.content}>{data[1].summary}</Text>
         {/* Add more summary content */}
       </View>
+      <View style={styles.section}>
+        <Text style={styles.heading}>Experience</Text>
+        {data[2].workExperiences.map((experience, index) => (
+          <View key={index}>
+            <Text style={styles.content}>Company: {experience.company}</Text>
+            <Text style={styles.content}>Job Title: {experience.jobTitle}</Text>
+            <Text style={styles.content}>Location: {experience.location}</Text>
+            {/* Add more fields from work experience */}
+          </View>
+        ))}
+      </View>
 
     </Page>
   </Document>
