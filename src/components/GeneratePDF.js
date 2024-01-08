@@ -59,6 +59,12 @@ const MyDocument = () => (
           </View>
         ))}
       </View>
+      <View style={styles.section}>
+        <Text style={styles.heading}>Skills</Text>
+        <Text style={styles.content}>Technical Skills: {data[4].skills.technicalSkills.join(', ')}</Text>
+        <Text style={styles.content}>Soft Skills: {data[4].skills.softSkills.join(', ')}</Text>
+        {/* Add more skill fields */}
+      </View>
 
     </Page>
   </Document>
