@@ -48,6 +48,17 @@ const MyDocument = () => (
           </View>
         ))}
       </View>
+      <View style={styles.section}>
+        <Text style={styles.heading}>Education</Text>
+        {data[3].education.map((education, index) => (
+          <View key={index}>
+            <Text style={styles.content}>Institution: {education.institutionName}</Text>
+            <Text style={styles.content}>Degree: {education.degreeEarned}</Text>
+            <Text style={styles.content}>Major: {education.major}</Text>
+            {/* Add more fields from education */}
+          </View>
+        ))}
+      </View>
 
     </Page>
   </Document>
