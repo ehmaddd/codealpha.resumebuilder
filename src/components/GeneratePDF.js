@@ -24,6 +24,14 @@ const styles = StyleSheet.create({
 
 const MyDocument = () => (
   <Document>
+    <Page size="A4" style={styles.page}>
+      <View style={styles.section}>
+        <Text style={styles.heading}>Personal Info</Text>
+        <Text style={styles.content}>Name: {data[0].personalinfo.fullName}</Text>
+        <Text style={styles.content}>Contact Number: {data[0].personalinfo.contactNumber}</Text>
+        <Text style={styles.content}>Email: {data[0].personalinfo.emailAddress}</Text>
+        {/* Add more personal info fields */}
+      </View>
 
   </Document>
 );
