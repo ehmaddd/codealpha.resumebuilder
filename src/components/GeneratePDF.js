@@ -65,7 +65,16 @@ const MyDocument = () => (
         <Text style={styles.content}>Soft Skills: {data[4].skills.softSkills.join(', ')}</Text>
         {/* Add more skill fields */}
       </View>
-
+      <View style={styles.section}>
+        <Text style={styles.heading}>Certifications</Text>
+        {data[5].certifications.map((certification, index) => (
+          <View key={index}>
+            <Text style={styles.content}>Name: {certification.name}</Text>
+            <Text style={styles.content}>Issuing Organization: {certification.issuingOrganization}</Text>
+            {/* Add more fields from certifications */}
+          </View>
+        ))}
+      </View>
     </Page>
   </Document>
 );
