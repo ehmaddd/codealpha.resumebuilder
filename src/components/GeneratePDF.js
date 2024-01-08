@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   }
 });
 
-function GeneratePDF() {
+const MyDocument = () => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
@@ -24,6 +24,11 @@ function GeneratePDF() {
       </View>
     </Page>
   </Document>
+);
+
+// Corrected GeneratePDF function
+function GeneratePDF() {
+  return <MyDocument />;
 }
 
 export default GeneratePDF;
