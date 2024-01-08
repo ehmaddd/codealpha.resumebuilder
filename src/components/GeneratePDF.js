@@ -1,5 +1,6 @@
 import React from 'react';
 import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import data from './data';
 
 const styles = StyleSheet.create({
   page: {
