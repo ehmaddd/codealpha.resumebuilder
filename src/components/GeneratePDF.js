@@ -1,5 +1,6 @@
 import React from 'react';
 import { Page, Text, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
+import { useHistory } from 'react-router-dom';
 import data from './data';
 
 const styles = StyleSheet.create({
@@ -48,13 +49,14 @@ const MyDocument = ({ onClose }) => (
 );
 
 function GeneratePDF() {
+  const history = useHistory();
   const onClose = () => {
-    
+    history.push('/');
   }
   return (
     <div style={{ width: '100%', height: '100vh' }}>
       <PDFViewer style={{ width: '100%', height: '100%' }}>
-        <MyDocument />
+        <MyDocument onClose={onClose} />
       </PDFViewer>
     </div>
   );
