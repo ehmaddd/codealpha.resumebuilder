@@ -39,17 +39,16 @@ const MyDocument = () => {
   return (
   <Document>
     <Page size="A4" style={styles.page}>
-    <View style={styles.section}>
-          <Text style={styles.heading}>Contact Information</Text>
-          <View>
-            <Text style={styles.content}>Full Name: {personalinfo.fullName}</Text>
-            <Text style={styles.content}>Contact Number: {personalinfo.contactNumber}</Text>
-            <Text style={styles.content}>Email Address: {personalinfo.emailAddress}</Text>
-            <Text style={styles.content}>Physical Address: {personalinfo.physicalAddress}</Text>
-            <Text style={styles.content}>LinkedIn: {personalinfo.linkedIn}</Text>
-            <Text style={styles.content}>Website: {personalinfo.websiteAddress}</Text>
-          </View>
+      <View style={styles.section}>
+        <View>
+          <Text style={styles.content}>{personalinfo.fullName.toUpperCase()}</Text>
+          <Text style={styles.content}>{personalinfo.contactNumber}</Text>
+          <Text style={styles.content}>{personalinfo.emailAddress}</Text>
+          <Text style={styles.content}>{personalinfo.physicalAddress}</Text>
+          <Text style={styles.content}>{personalinfo.linkedIn}</Text>
+          <Text style={styles.content}>{personalinfo.websiteAddress}</Text>
         </View>
+      </View>
       <View style={styles.section}>
         <Text>Section #2</Text>
       </View>
