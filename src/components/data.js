@@ -1,12 +1,12 @@
 const data = [
   {
     personalinfo: {
+      userTitle: "",
       fullName: "",
       contactNumber: "",
       emailAddress: "",
       physicalAddress: "",
       linkedIn: "",
-      websiteAddress: "",
     },
   },
   {

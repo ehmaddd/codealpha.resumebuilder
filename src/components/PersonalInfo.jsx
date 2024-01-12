@@ -30,9 +30,20 @@ const PersonalInfo = () => {
       <h1>Personal Information</h1>
       <div className="container-div">
         <form>
+        <div>
+            <span className="bull">&bull;</span>
+            <label className="lbl">What is your title?</label>
+            <input
+              type="text"
+              id="userTitle"
+              name="userTitle"
+              value={formData.userTitle}
+              onChange={handleInputChange}
+            />
+          </div>
           <div>
             <span className="bull">&bull;</span>
-            <label className="lbl">What is your full name?<p className="mandatory">*</p></label>
+            <label className="lbl">... your full name?<p className="mandatory">*</p></label>
             <input
               type="text"
               id="fullName"
@@ -83,17 +94,6 @@ const PersonalInfo = () => {
               id="linkedIn"
               name="linkedIn"
               value={formData.linkedIn}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <span className="bull">&bull;</span>
-            <label className="lbl">... your Website/Portfolio</label>
-            <input
-              type="text"
-              id="websiteAddress"
-              name="websiteAddress"
-              value={formData.websiteAddress}
               onChange={handleInputChange}
             />
           </div>

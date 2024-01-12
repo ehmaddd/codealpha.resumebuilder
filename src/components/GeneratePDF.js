@@ -13,6 +13,11 @@ const styles = StyleSheet.create({
     color: '#8a0202',
     fontWeight: 'bold',
   },
+  title : {
+    fontSize: 15,
+    color: '#f96b07',
+    fontWeight: 'bold',
+  },
   section: {
     marginBottom: 10,
   },
@@ -25,6 +30,10 @@ const styles = StyleSheet.create({
   content: {
     fontSize: 12,
     marginBottom: 4,
+  },
+  icon: {
+    marginRight: 5,
+    fontSize: 12,
   },
 });
 
@@ -47,11 +56,13 @@ const MyDocument = () => {
       <View style={styles.section}>
         <View>
           <Text style={styles.name}>{personalinfo.fullName.toUpperCase()}</Text>
-          <Text style={styles.content}>{personalinfo.contactNumber}</Text>
+          <Text style={styles.title}>{personalinfo.userTitle}</Text>
+          <Text style={styles.content}>
+            📞 {personalinfo.contactNumber}
+          </Text>
           <Text style={styles.content}>{personalinfo.emailAddress}</Text>
           <Text style={styles.content}>{personalinfo.physicalAddress}</Text>
           <Text style={styles.content}>{personalinfo.linkedIn}</Text>
-          <Text style={styles.content}>{personalinfo.websiteAddress}</Text>
         </View>
       </View>
       <View style={styles.section}>
