@@ -6,7 +6,12 @@ const styles = StyleSheet.create({
   page: {
     flexDirection: 'column',
     backgroundColor: '#E4E4E4',
-    padding: 20,
+    padding: 30,
+  },
+  name : {
+    fontSize: 22,
+    color: '#8a0202',
+    fontWeight: 'bold',
   },
   section: {
     marginBottom: 10,
@@ -41,7 +46,7 @@ const MyDocument = () => {
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
         <View>
-          <Text style={styles.content}>{personalinfo.fullName.toUpperCase()}</Text>
+          <Text style={styles.name}>{personalinfo.fullName.toUpperCase()}</Text>
           <Text style={styles.content}>{personalinfo.contactNumber}</Text>
           <Text style={styles.content}>{personalinfo.emailAddress}</Text>
           <Text style={styles.content}>{personalinfo.physicalAddress}</Text>
