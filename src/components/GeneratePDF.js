@@ -31,15 +31,11 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginBottom: 4,
   },
-  icon: {
-    marginRight: 5,
-    fontSize: 12,
-  },
 });
 
 const MyDocument = () => {
   const { personalinfo } = data[0];
-  // const { summary } = data[1];
+  const { summary } = data[1];
   // const { workExperiences } = data[2];
   // const { education } = data[3];
   // const { skills } = data[4];
@@ -57,9 +53,7 @@ const MyDocument = () => {
         <View>
           <Text style={styles.name}>{personalinfo.fullName.toUpperCase()}</Text>
           <Text style={styles.title}>{personalinfo.userTitle}</Text>
-          <Text style={styles.content}>
-            📞 {personalinfo.contactNumber}
-          </Text>
+          <Text style={styles.content}>{personalinfo.contactNumber}</Text>
           <Text style={styles.content}>{personalinfo.emailAddress}</Text>
           <Text style={styles.content}>{personalinfo.physicalAddress}</Text>
           <Text style={styles.content}>{personalinfo.linkedIn}</Text>
