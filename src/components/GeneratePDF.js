@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, PDFViewer, Image } from '@react-pdf/renderer';
 import data from './data';
 
 const styles = StyleSheet.create({
@@ -40,7 +40,7 @@ const MyDocument = () => {
   // const { education } = data[3];
   // const { skills } = data[4];
   // const { certifications } = data[5];
-  console.log(personalinfo);
+  // console.log(personalinfo);
   // console.log(summary);
   // console.log(workExperiences);
   // console.log(education);
