@@ -2,6 +2,7 @@ import React from 'react';
 import { Page, Text, View, Document, StyleSheet, PDFViewer, Image } from '@react-pdf/renderer';
 import data from './data';
 import contactIcon from '../img/contact.png';
+import emailIcon from '../img/email.png';
 
 const styles = StyleSheet.create({
   page: {
@@ -37,7 +38,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     fontSize: 12,
-    marginBottom: 4,
+    marginTop: 10,
+    color: '#1e72bb',
+  },
+  email: {
+    marginRight: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    fontSize: 12,
+    marginTop: 10,
     color: '#1e72bb',
   },
   icon: {
@@ -71,7 +80,10 @@ const MyDocument = () => {
             <Image style={styles.icon} source={contactIcon} />
             <Text style={styles.content}>{personalinfo.contactNumber}</Text>
           </View>
-          <Text style={styles.content}>{personalinfo.emailAddress}</Text>
+          <View style={styles.email}>
+            <Image style={styles.icon} source={emailIcon} />
+            <Text style={styles.content}>{personalinfo.emailAddress}</Text>
+          </View>
           <Text style={styles.content}>{personalinfo.physicalAddress}</Text>
           <Text style={styles.content}>{personalinfo.linkedIn}</Text>
         </View>
