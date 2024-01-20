@@ -4,6 +4,7 @@ import data from './data';
 import contactIcon from '../img/contact.png';
 import emailIcon from '../img/email.png';
 import linkedInIcon from '../img/linkedin.png';
+import locationIcon from '../img/location.png';
 
 const styles = StyleSheet.create({
   page: {
@@ -39,14 +40,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     fontSize: 12,
     marginTop: 10,
-    color: '#1e72bb',
     marginBottom: 5,
   },
   iconContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginRight: 50,
-    color: '#1e72bb',
+  },
+  location: {
+    fontSize: 12,
+    marginBottom: 4,
+    marginTop: 5,
+    marginLeft: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   icon: {
     marginRight: 5,
@@ -90,7 +97,10 @@ const MyDocument = () => {
               <Text style={styles.content}>{personalinfo.linkedIn}</Text>
             </View>
           </View>
-          <Text style={styles.content}>{personalinfo.physicalAddress}</Text>
+          <View style={styles.iconContainer}>
+            <Image style={styles.icon} source={locationIcon} />
+            <Text style={styles.location}>{personalinfo.physicalAddress}</Text>
+          </View>
         </View>
       </View>
       <View style={styles.section}>
