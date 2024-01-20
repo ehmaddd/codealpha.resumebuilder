@@ -33,20 +33,18 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginBottom: 4,
   },
-  contact: {
-    marginRight: 5,
+  contactAndEmail: {
     flexDirection: 'row',
     alignItems: 'center',
     fontSize: 12,
     marginTop: 10,
     color: '#1e72bb',
+    marginBottom: 5, // Add marginBottom for spacing
   },
-  email: {
-    marginRight: 5,
+  iconContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    fontSize: 12,
-    marginTop: 10,
+    marginRight: 50,
     color: '#1e72bb',
   },
   icon: {
@@ -77,16 +75,21 @@ const MyDocument = () => {
         <View>
           <Text style={styles.name}>{personalinfo.fullName.toUpperCase()}</Text>
           <Text style={styles.title}>{personalinfo.userTitle}</Text>
-          <View style={styles.contact}>
-            <Image style={styles.icon} source={contactIcon} />
-            <Text style={styles.content}>{personalinfo.contactNumber}</Text>
-          </View>
-          <View style={styles.email}>
-            <Image style={styles.icon} source={emailIcon} />
-            <Text style={styles.content}>{personalinfo.emailAddress}</Text>
+          <View style={styles.contactAndEmail}>
+            <View style={styles.iconContainer}>
+              <Image style={styles.icon} source={contactIcon} />
+              <Text style={styles.content}>{personalinfo.contactNumber}</Text>
+            </View>
+            <View style={styles.iconContainer}>
+              <Image style={styles.icon} source={emailIcon} />
+              <Text style={styles.content}>{personalinfo.emailAddress}</Text>
+            </View>
+            <View style={styles.iconContainer}>
+              <Image style={styles.icon} source={linkedinIcon} />
+              <Text style={styles.content}>{personalinfo.linkedIn}</Text>
+            </View>
           </View>
           <Text style={styles.content}>{personalinfo.physicalAddress}</Text>
-          <Text style={styles.content}>{personalinfo.linkedIn}</Text>
         </View>
       </View>
       <View style={styles.section}>
