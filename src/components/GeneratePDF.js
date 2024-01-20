@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginRight: 5,
+    marginBottom: 2,
     width: 12,
     height: 12,
   },
