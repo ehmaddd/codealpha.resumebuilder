@@ -1,6 +1,7 @@
 import React from 'react';
 import { Page, Text, View, Document, StyleSheet, PDFViewer, Image } from '@react-pdf/renderer';
 import data from './data';
+import contactIcon from '../img/contact.png';
 
 const styles = StyleSheet.create({
   page: {
@@ -31,6 +32,19 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginBottom: 4,
   },
+  contact: {
+    marginRight: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    fontSize: 12,
+    marginBottom: 4,
+    color: '#f96b07',
+  },
+  icon: {
+    marginRight: 5,
+    width: 12,
+    height: 12,
+  },
 });
 
 const MyDocument = () => {
@@ -53,7 +67,10 @@ const MyDocument = () => {
         <View>
           <Text style={styles.name}>{personalinfo.fullName.toUpperCase()}</Text>
           <Text style={styles.title}>{personalinfo.userTitle}</Text>
-          <Text style={styles.content}>{personalinfo.contactNumber}</Text>
+          <View style={styles.contact}>
+            <Image style={styles.icon} source={contactIcon} />
+            <Text style={styles.content}>{personalinfo.contactNumber}</Text>
+          </View>
           <Text style={styles.content}>{personalinfo.emailAddress}</Text>
           <Text style={styles.content}>{personalinfo.physicalAddress}</Text>
           <Text style={styles.content}>{personalinfo.linkedIn}</Text>
