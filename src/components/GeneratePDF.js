@@ -3,6 +3,7 @@ import { Page, Text, View, Document, StyleSheet, PDFViewer, Image } from '@react
 import data from './data';
 import contactIcon from '../img/contact.png';
 import emailIcon from '../img/email.png';
+import linkedInIcon from '../img/linkedin.png';
 
 const styles = StyleSheet.create({
   page: {
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginTop: 10,
     color: '#1e72bb',
-    marginBottom: 5, // Add marginBottom for spacing
+    marginBottom: 5,
   },
   iconContainer: {
     flexDirection: 'row',
@@ -85,7 +86,7 @@ const MyDocument = () => {
               <Text style={styles.content}>{personalinfo.emailAddress}</Text>
             </View>
             <View style={styles.iconContainer}>
-              <Image style={styles.icon} source={linkedinIcon} />
+              <Image style={styles.icon} source={linkedInIcon} />
               <Text style={styles.content}>{personalinfo.linkedIn}</Text>
             </View>
           </View>
