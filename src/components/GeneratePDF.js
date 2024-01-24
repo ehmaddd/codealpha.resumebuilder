@@ -101,7 +101,7 @@ const MyDocument = () => {
             <Image style={styles.icon} source={locationIcon} />
             <Text style={styles.location}>{personalinfo.physicalAddress}</Text>
           </View>
-          <View style={{ borderBottom: 1, borderBottomColor: 'black', marginTop: 5, marginBottom: 5 }} />
+          <View style={{ borderBottom: 1, borderBottomColor: 'grey', marginTop: 5, marginBottom: 5 }} />
         </View>
       </View>
       <View style={styles.section}>
