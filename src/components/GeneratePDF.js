@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
   summary: {
     backgroundColor: "grey",
     fontSize: 12,
-    padding: 3,
+    padding: 5,
+    textAlign: 'center',
   },
   icon: {
     marginRight: 5,
