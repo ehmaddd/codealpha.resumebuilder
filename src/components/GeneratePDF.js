@@ -55,6 +55,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  summary: {
+  },
   icon: {
     marginRight: 5,
     marginBottom: 2,
