@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   summary: {
+    color: "8a0202",
     backgroundColor: "#0000",
     padding: 1,
   },
