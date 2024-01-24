@@ -56,6 +56,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   summary: {
+    backgroundColor: "#0000",
+    padding: 1,
   },
   icon: {
     marginRight: 5,
