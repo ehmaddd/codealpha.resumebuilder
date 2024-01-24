@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   summary: {
-    backgroundColor: "#0000",
+    backgroundColor: "grey",
   },
   icon: {
     marginRight: 5,
@@ -108,7 +108,7 @@ const MyDocument = () => {
         </View>
       </View>
       <View style={styles.section}>
-        <Text>Summary</Text>
+        <Text style={styles.summary}>Summary</Text>
       </View>
     </Page>
   </Document>
