@@ -105,7 +105,7 @@ const MyDocument = () => {
         </View>
       </View>
       <View style={styles.section}>
-        <Text>Section #2</Text>
+        <Text>Summary</Text>
       </View>
     </Page>
   </Document>
