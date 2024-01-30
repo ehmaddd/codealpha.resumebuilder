@@ -35,6 +35,11 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginBottom: 4,
   },
+  detailContent : {
+    fontSize: 12,
+    marginBottom: 4,
+    marginTop: 8,
+  },
   contactAndEmail: {
     flexDirection: 'row',
     alignItems: 'center',
