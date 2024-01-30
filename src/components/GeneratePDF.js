@@ -113,7 +113,7 @@ const MyDocument = () => {
       </View>
       <View style={styles.section}>
         <Text style={styles.summary}>Summary</Text>
-        <Text style={styles.name}>{summary}</Text>
+        <Text style={styles.content}>{summary}</Text>
       </View>
     </Page>
   </Document>
