@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     padding: 5,
     textAlign: 'center',
+    borderRadius: 8,
   },
   icon: {
     marginRight: 5,
