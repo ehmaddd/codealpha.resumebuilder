@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  summary: {
+  header: {
     backgroundColor: "grey",
     fontSize: 12,
     padding: 5,
@@ -117,11 +117,11 @@ const MyDocument = () => {
         </View>
       </View>
       <View style={styles.section}>
-        <Text style={styles.summary}>Summary</Text>
+        <Text style={styles.header}>Summary</Text>
         <Text style={styles.detailContent}>{summary}</Text>
       </View>
       <View style={styles.section}>
-        <Text style={styles.summary}>Summary</Text>
+        <Text style={styles.header}>Experience</Text>
         <Text style={styles.detailContent}>{summary}</Text>
       </View>
     </Page>
