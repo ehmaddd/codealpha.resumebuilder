@@ -122,7 +122,7 @@ const MyDocument = () => {
       </View>
       <View style={styles.section}>
         <Text style={styles.header}>Experience</Text>
-        <Text style={styles.detailContent}>{summary}</Text>
+        {/* <Text style={styles.detailContent}>{summary}</Text> */}
       </View>
     </Page>
   </Document>
