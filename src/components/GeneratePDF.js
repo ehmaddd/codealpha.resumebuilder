@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   header2: {
-    fontSize: 19,
+    fontSize: 13,
     color: '#8a0202',
     fontWeight: 'bold',
   },
