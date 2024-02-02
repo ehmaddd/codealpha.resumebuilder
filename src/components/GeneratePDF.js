@@ -132,6 +132,7 @@ const MyDocument = () => {
             <>
               <Text style={styles.header2}>{experience.company}</Text>
               <Text style={styles.content}>{experience.jobTitle}</Text>
+              <Text style={styles.content}>{experience.responsibilities}</Text>
             </>
           )
         })}</Text>
