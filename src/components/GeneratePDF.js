@@ -134,6 +134,7 @@ const MyDocument = () => {
               <Text style={styles.content}>{experience.jobTitle}</Text>
               <Text style={styles.content}>{experience.responsibilities}</Text>
               <Text style={styles.content}>{experience.startDate}</Text>
+              <Text style={styles.content}>{experience.endDate}</Text>
             </>
           )
         })}</Text>
