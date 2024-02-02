@@ -128,7 +128,12 @@ const MyDocument = () => {
       <View style={styles.section}>
         <Text style={styles.header}>Experience</Text>
         <Text style={styles.detailContent}>{workExperiences.map((experience)=> {
-          return <Text style={styles.header2}>{experience.company}</Text>
+          return (
+            <>
+              <Text style={styles.header2}>{experience.company}</Text>
+              <Text style={styles.content}>{experience.jobTitle}</Text>
+            </>
+          )
         })}</Text>
       </View>
     </Page>
