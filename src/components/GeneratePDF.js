@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
 const MyDocument = () => {
   const { personalinfo } = data[0];
   const { summary } = data[1];
-  // const { workExperiences } = data[2];
+  const { workExperiences } = data[2];
   // const { education } = data[3];
   // const { skills } = data[4];
   // const { certifications } = data[5];
@@ -122,7 +122,9 @@ const MyDocument = () => {
       </View>
       <View style={styles.section}>
         <Text style={styles.header}>Experience</Text>
-        {/* <Text style={styles.detailContent}>{summary}</Text> */}
+        <Text style={styles.detailContent}>{workExperiences.map((experience)=> {
+          console.log(experience);
+        })}</Text>
       </View>
     </Page>
   </Document>
