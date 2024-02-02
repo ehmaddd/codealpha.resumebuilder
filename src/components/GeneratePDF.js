@@ -67,6 +67,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     borderRadius: 8,
   },
+  header2: {
+    fontSize: 19,
+    color: '#8a0202',
+    fontWeight: 'bold',
+  },
   icon: {
     marginRight: 5,
     marginBottom: 2,
@@ -123,7 +128,7 @@ const MyDocument = () => {
       <View style={styles.section}>
         <Text style={styles.header}>Experience</Text>
         <Text style={styles.detailContent}>{workExperiences.map((experience)=> {
-          console.log(experience);
+          return <Text style={styles.header2}>{experience.company}</Text>
         })}</Text>
       </View>
     </Page>
