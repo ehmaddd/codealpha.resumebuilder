@@ -35,6 +35,16 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginBottom: 4,
   },
+  expDateContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    width: '100%',
+    border: 1,
+  },
+  expDate: {
+    fontSize: 12,
+    marginBottom: 4,
+  },
   detailContent : {
     fontSize: 12,
     marginBottom: 4,
@@ -135,11 +145,13 @@ const MyDocument = () => {
 
           return (
             <React.Fragment key={experience.id}>
-              <Text style={styles.header2}>{experience.company}</Text>
+              <View style={styles.expDateContainer}>
+                <Text style={styles.header2}>{experience.company}</Text>
+                <Text style={styles.expDate}>{formattedStartDate}</Text>
+                <Text style={styles.expDate}> - {formattedEndDate}</Text>
+              </View>
               <Text style={styles.content}>{experience.jobTitle}</Text>
               <Text style={styles.content}>{experience.responsibilities}</Text>
-              <Text style={styles.content}>{formattedStartDate}</Text>
-              <Text style={styles.content}> - {formattedEndDate}</Text>
             </React.Fragment>
           );
         })}
