@@ -127,17 +127,18 @@ const MyDocument = () => {
       </View>
       <View style={styles.section}>
         <Text style={styles.header}>Experience</Text>
-        <Text style={styles.detailContent}>{workExperiences.map((experience)=> {
-          return (
-            <>
+        <Text style={styles.detailContent}>
+          {workExperiences.map((experience) => (
+            <React.Fragment key={experience.id}>
               <Text style={styles.header2}>{experience.company}</Text>
               <Text style={styles.content}>{experience.jobTitle}</Text>
               <Text style={styles.content}>{experience.responsibilities}</Text>
               <Text style={styles.content}>{experience.startDate}</Text>
-              <Text style={styles.content}>{experience.endDate}</Text>
-            </>
-          )
-        })}</Text>
+              <Text style={styles.content}> - {experience.endDate}</Text>
+            </React.Fragment>
+          ))}
+        </Text>
+
       </View>
     </Page>
   </Document>
