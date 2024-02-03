@@ -128,16 +128,22 @@ const MyDocument = () => {
       <View style={styles.section}>
         <Text style={styles.header}>Experience</Text>
         <Text style={styles.detailContent}>
-          {workExperiences.map((experience) => (
+        {workExperiences.map((experience) => {
+          // Assuming experience.startDate and experience.endDate are in a format that can be parsed by the Date object
+          const formattedStartDate = new Date(experience.startDate).toLocaleDateString('en-GB');
+          const formattedEndDate = new Date(experience.endDate).toLocaleDateString('en-GB');
+
+          return (
             <React.Fragment key={experience.id}>
               <Text style={styles.header2}>{experience.company}</Text>
               <Text style={styles.content}>{experience.jobTitle}</Text>
               <Text style={styles.content}>{experience.responsibilities}</Text>
-              <Text style={styles.content}>{experience.startDate}</Text>
-              <Text style={styles.content}> - {experience.endDate}</Text>
+              <Text style={styles.content}>{formattedStartDate}</Text>
+              <Text style={styles.content}> - {formattedEndDate}</Text>
             </React.Fragment>
-          ))}
-        </Text>
+          );
+        })}
+      </Text>
 
       </View>
     </Page>
