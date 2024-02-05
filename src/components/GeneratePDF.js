@@ -150,8 +150,10 @@ const MyDocument = () => {
                 <Text style={styles.expDate}>{formattedStartDate}</Text>
                 <Text style={styles.expDate}> - {formattedEndDate}</Text>
               </View>
-              <Text style={styles.content}>{experience.jobTitle}</Text>
-              <Text style={styles.content}>{experience.responsibilities}</Text>
+              <View style={styles.expDetails}>
+                <Text style={styles.content}>{experience.jobTitle}</Text>
+                <Text style={styles.content}>{experience.responsibilities}</Text>
+              </View>
             </React.Fragment>
           );
         })}
