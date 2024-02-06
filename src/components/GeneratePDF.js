@@ -168,7 +168,7 @@ const MyDocument = () => {
           ))}
         </View>
         <View style={styles.section}>
-          { <Text style={styles.header}>Education</Text>
+            { <Text style={styles.header}>Education</Text>}
           { /*workExperiences.map((experience, index) => (
             <View key={experience.id}>
               <View style={styles.expDateContainer}>
