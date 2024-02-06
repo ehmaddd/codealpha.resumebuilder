@@ -35,15 +35,21 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginBottom: 4,
   },
+  jobDetails: {
+    fontSize: 12,
+    marginBottom: 4,
+    marginTop: 7,
+  },
   expDateContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     width: '100%',
-    border: 1,
+    marginTop: 5,
   },
   expDate: {
     fontSize: 12,
-    marginBottom: 4,
+    flex: 1,
+    marginLeft: 350,
   },
   detailContent : {
     fontSize: 12,
@@ -81,12 +87,17 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#8a0202',
     fontWeight: 'bold',
+    marginBottom: 4,
   },
   icon: {
     marginRight: 5,
     marginBottom: 2,
     width: 12,
     height: 12,
+  },
+  expDetails: {
+    marginTop: 5,
+    height: 15,
   },
 });
 
@@ -128,7 +139,7 @@ const MyDocument = () => {
             <Image style={styles.icon} source={locationIcon} />
             <Text style={styles.location}>{personalinfo.physicalAddress}</Text>
           </View>
-          <View style={{ borderBottom: 1, borderBottomColor: 'grey', marginTop: 5, marginBottom: 5 }} />
+          <View style={{ marginTop: 5, marginBottom: 5 }} />
         </View>
       </View>
       <View style={styles.section}>
@@ -136,30 +147,21 @@ const MyDocument = () => {
         <Text style={styles.detailContent}>{summary}</Text>
       </View>
       <View style={styles.section}>
-        <Text style={styles.header}>Experience</Text>
-        <Text style={styles.detailContent}>
-        {workExperiences.map((experience) => {
-          // Assuming experience.startDate and experience.endDate are in a format that can be parsed by the Date object
-          const formattedStartDate = new Date(experience.startDate).toLocaleDateString('en-GB');
-          const formattedEndDate = new Date(experience.endDate).toLocaleDateString('en-GB');
-
-          return (
-            <React.Fragment key={experience.id}>
+          <Text style={styles.header}>Experience</Text>
+          {workExperiences.map((experience, index) => (
+            <View key={experience.id}>
               <View style={styles.expDateContainer}>
                 <Text style={styles.header2}>{experience.company}</Text>
-                <Text style={styles.expDate}>{formattedStartDate}</Text>
-                <Text style={styles.expDate}> - {formattedEndDate}</Text>
+                <Text style={styles.expDate}>{new Date(experience.startDate).toLocaleDateString('en-GB') } - {new Date(experience.endDate).toLocaleDateString('en-GB') }</Text>
               </View>
-              <View style={styles.expDetails}>
-                <Text style={styles.content}>{experience.jobTitle}</Text>
-                <Text style={styles.content}>{experience.responsibilities}</Text>
-              </View>
-            </React.Fragment>
-          );
-        })}
-      </Text>
-
-      </View>
+              <Text style={styles.jobDetails}>{experience.jobTitle}</Text>
+              <Text style={styles.jobDetails}>{experience.responsibilities}</Text>
+              {index !== workExperiences.length - 1 && (
+                <View style={{ marginTop: 5, marginBottom: 5 }} />
+              )}
+            </View>
+          ))}
+        </View>
     </Page>
   </Document>
 )};
