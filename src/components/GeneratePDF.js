@@ -167,6 +167,22 @@ const MyDocument = () => {
             </View>
           ))}
         </View>
+        <View style={styles.section}>
+          {/* <Text style={styles.header}>Experience</Text>
+          {workExperiences.map((experience, index) => (
+            <View key={experience.id}>
+              <View style={styles.expDateContainer}>
+                <Text style={styles.header2}>{experience.company}</Text>
+                <Text style={styles.expDate}>{new Date(experience.startDate).toLocaleDateString('en-GB') } - {new Date(experience.endDate).toLocaleDateString('en-GB') }</Text>
+              </View>
+              <Text style={styles.designation}>{experience.jobTitle}</Text>
+              <Text style={styles.jobDetails}>{experience.responsibilities}</Text>
+              {index !== workExperiences.length - 1 && (
+                <View style={{ marginTop: 5, marginBottom: 5 }} />
+              )}
+            </View>
+          ))} */}
+        </View>
     </Page>
   </Document>
 )};
