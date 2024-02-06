@@ -151,6 +151,7 @@ const MyDocument = () => {
         <Text style={styles.header}>Summary</Text>
         <Text style={styles.detailContent}>{summary}</Text>
       </View>
+      {workExperiences.length > 0 && (
       <View style={styles.section}>
           <Text style={styles.header}>Experience</Text>
           {workExperiences.map((experience, index) => (
@@ -167,6 +168,7 @@ const MyDocument = () => {
             </View>
           ))}
         </View>
+      )}
         <View style={styles.section}>
             { <Text style={styles.header}>Education</Text>}
           { /*workExperiences.map((experience, index) => (
