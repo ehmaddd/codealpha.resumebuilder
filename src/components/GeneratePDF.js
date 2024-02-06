@@ -41,20 +41,25 @@ const styles = StyleSheet.create({
     marginTop: 7,
   },
   expDateContainer: {
+    display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     width: '100%',
     marginTop: 5,
   },
   expDate: {
     fontSize: 12,
-    flex: 1,
-    marginLeft: 350,
   },
   detailContent : {
     fontSize: 12,
     marginBottom: 4,
     marginTop: 8,
+  },
+  designation : {
+    color: '#1e72bb',
+    fontSize: 11,
+    marginBottom: 4,
+    marginTop: 0,
   },
   contactAndEmail: {
     flexDirection: 'row',
@@ -154,7 +159,7 @@ const MyDocument = () => {
                 <Text style={styles.header2}>{experience.company}</Text>
                 <Text style={styles.expDate}>{new Date(experience.startDate).toLocaleDateString('en-GB') } - {new Date(experience.endDate).toLocaleDateString('en-GB') }</Text>
               </View>
-              <Text style={styles.jobDetails}>{experience.jobTitle}</Text>
+              <Text style={styles.designation}>{experience.jobTitle}</Text>
               <Text style={styles.jobDetails}>{experience.responsibilities}</Text>
               {index !== workExperiences.length - 1 && (
                 <View style={{ marginTop: 5, marginBottom: 5 }} />
