@@ -5,7 +5,15 @@ import data from './data';
 import './Education.css';
 
 const Education = () => {
-  const [formData, setFormData] = useState(data[3]?.education || []);
+  const newEducation = {
+    institution: '',
+    degree: '',
+    major: '',
+    graduationDate: '',
+    honorsAwards: '',
+  };
+
+  const [formData, setFormData] = useState(data[3]?.education || [newEducation]);
   const [educations, setEducations] = useState(data[3]?.educations || []);
 
   const handleInputChange = (index, key, value) => {
@@ -15,14 +23,6 @@ const Education = () => {
   };
 
   const handleAddEducation = () => {
-    const newEducation = {
-      institution: '',
-      degree: '',
-      major: '',
-      graduationDate: '',
-      honorsAwards: '',
-    };
-
     setEducations([...educations, newEducation]);
   };
 
