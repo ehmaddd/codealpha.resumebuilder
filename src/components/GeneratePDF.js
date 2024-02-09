@@ -171,9 +171,9 @@ const MyDocument = () => {
       )}
         <View style={styles.section}>
           { <Text style={styles.header}>Education</Text>}
-            {
+          {educations.map((education, index) => (
 
-            }
+          ))}
         </View>
     </Page>
   </Document>
