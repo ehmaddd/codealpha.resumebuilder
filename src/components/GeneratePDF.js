@@ -110,7 +110,7 @@ const MyDocument = () => {
   const { personalinfo } = data[0];
   const { summary } = data[1];
   const { workExperiences } = data[2];
-  // const { education } = data[3];
+  const { educations } = data[3];
   // const { skills } = data[4];
   // const { certifications } = data[5];
   // console.log(personalinfo);
@@ -171,7 +171,9 @@ const MyDocument = () => {
       )}
         <View style={styles.section}>
           { <Text style={styles.header}>Education</Text>}
+            {
 
+            }
         </View>
     </Page>
   </Document>
