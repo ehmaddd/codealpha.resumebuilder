@@ -173,7 +173,7 @@ const MyDocument = () => {
           { <Text style={styles.header}>Education</Text>}
           {educations.map((education, index) => (
             <View key={education.id}>
-              console.log(education);
+               <Text style={styles.content}>education.id</Text>
             </View>
           ))}
         </View>
