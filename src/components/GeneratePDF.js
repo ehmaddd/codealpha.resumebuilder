@@ -173,7 +173,12 @@ const MyDocument = () => {
           { <Text style={styles.header}>Education</Text>}
           {educations.map((education, index) => (
             <View key={education.id}>
-               <Text style={styles.content}>education.id</Text>
+              <View style={styles.expDateContainer}>
+                <Text style={styles.header2}>{education.institution}</Text>
+                <Text style={styles.content}>{new Date(education.graduationDate).toLocaleDateString('en-GB')}</Text>
+              </View>
+              <Text style={styles.designation}>{education.degree} ({education.major})</Text>
+              <Text style={styles.content}>{education.honorsAwards}</Text>
             </View>
           ))}
         </View>
