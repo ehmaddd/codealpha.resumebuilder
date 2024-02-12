@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
     height: 15,
   },
   skillContainer: {
+    marginTop: 5,
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
@@ -113,6 +114,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '33.33%',
     marginBottom: 5,
+    fontSize: 12,
   },
   bullet: {
     marginRight: 5,
