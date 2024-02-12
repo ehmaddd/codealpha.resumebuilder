@@ -104,6 +104,19 @@ const styles = StyleSheet.create({
     marginTop: 5,
     height: 15,
   },
+  skillContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  skillItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '33.33%',
+    marginBottom: 5,
+  },
+  bullet: {
+    marginRight: 5,
+  },
 });
 
 const MyDocument = () => {
@@ -188,14 +201,15 @@ const MyDocument = () => {
           ))}
         </View>
         <View style={styles.section}>
-          { <Text style={styles.header}>Tech Skills</Text>}
-          <View style={styles.skillContainer}></View>
-            {technicalSkills.map((techSkill, index) => (
-              techString += `•${techSkill}\t`
-            ))}
-            <View style={styles.skillItem}>
-                <Text style={styles.content}> {techString}</Text>
-            </View>
+         <Text style={styles.header}>Tech Skills</Text>
+         <View style={styles.skillContainer}>
+           {technicalSkills.map((techSkill, index) => (
+             <View key={techSkill.id} style={styles.skillItem}>
+               <Text style={styles.bullet}>•</Text>
+               <Text>{techSkill}</Text>
+             </View>
+           ))}
+         </View>
         </View>
     </Page>
   </Document>
