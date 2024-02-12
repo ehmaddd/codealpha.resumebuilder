@@ -213,6 +213,17 @@ const MyDocument = () => {
            ))}
          </View>
         </View>
+        <View style={styles.section}>
+         <Text style={styles.header}>Soft Skills</Text>
+         <View style={styles.skillContainer}>
+           {technicalSkills.map((techSkill, index) => (
+             <View key={techSkill.id} style={styles.skillItem}>
+               <Text style={styles.bullet}>•</Text>
+               <Text>{techSkill}</Text>
+             </View>
+           ))}
+         </View>
+        </View>
     </Page>
   </Document>
 )};
