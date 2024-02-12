@@ -111,7 +111,7 @@ const MyDocument = () => {
   const { summary } = data[1];
   const { workExperiences } = data[2];
   const { educations } = data[3];
-  // const { skills } = data[4];
+  const { skills } = data[4];
   // const { certifications } = data[5];
   // console.log(personalinfo);
   // console.log(summary);
