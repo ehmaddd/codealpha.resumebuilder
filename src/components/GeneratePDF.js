@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     backgroundColor: "grey",
     fontSize: 12,
     padding: 5,
+    textAlign: 'center',
     borderRadius: 8,
   },
   header2: {
