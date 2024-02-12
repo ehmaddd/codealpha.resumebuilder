@@ -182,6 +182,10 @@ const MyDocument = () => {
             </View>
           ))}
         </View>
+        <View style={styles.section}>
+          { <Text style={styles.header}>Tech Skills</Text>}
+
+        </View>
     </Page>
   </Document>
 )};
