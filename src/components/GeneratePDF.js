@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 11,
     marginBottom: 4,
     marginTop: 0,
+    marginLeft: 8,
   },
   contactAndEmail: {
     flexDirection: 'row',
@@ -188,7 +189,7 @@ const MyDocument = () => {
           {educations.map((education, index) => (
             <View key={education.id}>
               <View style={styles.expDateContainer}>
-                <Text style={styles.header2}>{education.institution}</Text>
+                <Text style={styles.header2}>• {education.institution}</Text>
                 <Text style={styles.content}>{new Date(education.graduationDate).toLocaleDateString('en-GB')}</Text>
               </View>
               <Text style={styles.designation}>{education.degree} ({education.major})</Text>
