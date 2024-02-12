@@ -178,7 +178,7 @@ const MyDocument = () => {
                 <Text style={styles.content}>{new Date(education.graduationDate).toLocaleDateString('en-GB')}</Text>
               </View>
               <Text style={styles.designation}>{education.degree} ({education.major})</Text>
-              <Text style={styles.content}>{education.honorsAwards}</Text>
+              <Text style={styles.jobDetails}>{education.honorsAwards}</Text>
             </View>
           ))}
         </View>
