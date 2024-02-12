@@ -116,6 +116,7 @@ const MyDocument = () => {
   const softSkills = skills.softSkills;
   console.log(technicalSkills);
   console.log(softSkills);
+  let techString = ''
   // const { certifications } = data[5];
   // console.log(personalinfo);
   // console.log(summary);
@@ -188,12 +189,13 @@ const MyDocument = () => {
         </View>
         <View style={styles.section}>
           { <Text style={styles.header}>Tech Skills</Text>}
+          <View style={styles.skillContainer}></View>
             {technicalSkills.map((techSkill, index) => (
-              <View key={techSkill.id} style={styles.skillItem}>
-                <Text style={styles.bullet}>•</Text>
-                <Text>{techSkill}</Text>
-              </View>
+              techString += `•${techSkill}\t`
             ))}
+            <View style={styles.skillItem}>
+                <Text style={styles.content}> {techString}</Text>
+            </View>
         </View>
     </Page>
   </Document>
