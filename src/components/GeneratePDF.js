@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   skillItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '33.33%',
+    width: '25%',
     marginBottom: 5,
     fontSize: 12,
   },
