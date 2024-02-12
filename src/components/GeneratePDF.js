@@ -112,6 +112,7 @@ const MyDocument = () => {
   const { workExperiences } = data[2];
   const { educations } = data[3];
   const { skills } = data[4];
+  console.log(skills.technicalSkills);
   console.log(skills.softSkills);
   // const { certifications } = data[5];
   // console.log(personalinfo);
