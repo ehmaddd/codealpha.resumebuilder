@@ -189,8 +189,9 @@ const MyDocument = () => {
         <View style={styles.section}>
           { <Text style={styles.header}>Tech Skills</Text>}
             {technicalSkills.map((techSkill, index) => (
-              <View key={techSkill.id}>
-                  <Text>{techSkill}</Text>
+              <View key={techSkill.id} style={styles.skillItem}>
+                <Text style={styles.bullet}>•</Text>
+                <Text>{techSkill}</Text>
               </View>
             ))}
         </View>
