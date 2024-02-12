@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   designation : {
-    color: '#1e72bb',
     fontSize: 11,
     marginBottom: 4,
     marginTop: 0,
@@ -90,7 +89,6 @@ const styles = StyleSheet.create({
   },
   header2: {
     fontSize: 13,
-    color: '#8a0202',
     fontWeight: 'bold',
     marginBottom: 4,
   },
