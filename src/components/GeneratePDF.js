@@ -197,7 +197,8 @@ const MyDocument = () => {
                 <Text style={styles.header2}>• {education.institution}</Text>
                 <Text style={styles.content}>{new Date(education.graduationDate).toLocaleDateString('en-GB')}</Text>
               </View>
-              <Text style={styles.designation}>{education.degree} ({education.major})</Text>
+              <Text style={styles.designation}>{education.degree}</Text>
+              <Text style={styles.designation}>{education.major}</Text>
             </View>
           ))}
         </View>
