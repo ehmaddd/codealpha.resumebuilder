@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: 'bold',
     marginBottom: 4,
-    marginLeft: 5,
+    marginLeft: 8,
   },
   icon: {
     marginRight: 5,
@@ -180,10 +180,10 @@ const MyDocument = () => {
           {workExperiences.map((experience, index) => (
             <View key={experience.id}>
               <View style={styles.expDateContainer}>
-                <Text style={styles.header3}>• {experience.company.toUpperCase()}</Text>
+                <Text style={styles.header2}>• {experience.company.toUpperCase()}</Text>
                 <Text style={styles.expDate}>{new Date(experience.startDate).toLocaleDateString('en-GB') } - {new Date(experience.endDate).toLocaleDateString('en-GB') }</Text>
               </View>
-              <Text style={styles.header2}>{experience.jobTitle}</Text>
+              <Text style={styles.header3}>{experience.jobTitle}</Text>
               <Text style={styles.jobDetails}>{experience.responsibilities}</Text>
             </View>
           ))}
