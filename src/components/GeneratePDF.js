@@ -225,6 +225,7 @@ const MyDocument = () => {
          </View>
         </View>
         <View style={styles.section}>
+         <Text style={styles.header}>Certifications</Text>
         </View>
     </Page>
   </Document>
