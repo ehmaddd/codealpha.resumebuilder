@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginBottom: 4,
     marginTop: 4,
-    marginLeft: 4,
+    marginLeft: 12,
   },
   expDateContainer: {
     display: 'flex',
