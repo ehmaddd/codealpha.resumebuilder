@@ -136,11 +136,6 @@ const MyDocument = () => {
   const technicalSkills = skills.technicalSkills;
   const softSkills = skills.softSkills;
   // const { certifications } = data[5];
-  // console.log(personalinfo);
-  // console.log(summary);
-  // console.log(workExperiences);
-  // console.log(education);
-  // console.log(skills);
   // console.log(certifications);
   return (
   <Document>
