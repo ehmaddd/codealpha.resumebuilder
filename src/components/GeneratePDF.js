@@ -135,7 +135,7 @@ const MyDocument = () => {
   const { skills } = data[4];
   const technicalSkills = skills.technicalSkills;
   const softSkills = skills.softSkills;
-  // const { certifications } = data[5];
+  const { certifications } = data[5];
   // console.log(certifications);
   return (
   <Document>
