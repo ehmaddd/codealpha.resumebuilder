@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     fontWeight: 'heavy',
     color: 'white',
+    marginBottom: 4,
   },
   header2: {
     fontSize: 13,
