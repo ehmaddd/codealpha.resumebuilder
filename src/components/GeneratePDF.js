@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 4,
     marginLeft: 8,
+    fontStyle: 'italic',
   },
   icon: {
     marginRight: 5,
