@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     borderRadius: 8,
     fontWeight: 'heavy',
+    color: 'white',
   },
   header2: {
     fontSize: 13,
