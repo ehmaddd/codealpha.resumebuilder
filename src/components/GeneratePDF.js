@@ -223,6 +223,11 @@ const MyDocument = () => {
         </View>
         <View style={styles.section}>
          <Text style={styles.header}>Certifications</Text>
+         <View style={styles.content}>
+           {certifications.map((certification, index) => (
+
+           ))}
+         </View>
         </View>
     </Page>
   </Document>
