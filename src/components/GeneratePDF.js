@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     padding: 5,
     textAlign: 'center',
     borderRadius: 8,
+    fontWeight: 'bold',
   },
   header2: {
     fontSize: 13,
