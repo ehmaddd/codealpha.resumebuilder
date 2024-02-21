@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    backgroundColor: "grey",
+    backgroundColor: 'black',
     fontSize: 12,
     padding: 5,
     textAlign: 'center',
