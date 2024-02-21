@@ -225,7 +225,13 @@ const MyDocument = () => {
          <Text style={styles.header}>Certifications</Text>
          <View style={styles.content}>
            {certifications.map((certification, index) => (
-
+            <View key={certification.id} style={styles.content}>
+              <View style={styles.expDateContainer}>
+                <Text style={styles.header2}>• {certification.issuingOrganization.toUpperCase()}</Text>
+                <Text style={styles.content}>{new Date(certification.dateOfCertification).toLocaleDateString('en-GB')}</Text>
+              </View>
+              <Text style={styles.header3}>{certification.name}</Text>
+          </View>
            ))}
          </View>
         </View>
