@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
   jobDetails: {
     fontSize: 12,
     marginBottom: 4,
-    marginTop: 4,
     marginLeft: 12,
   },
   expDateContainer: {
@@ -60,7 +59,7 @@ const styles = StyleSheet.create({
     fontSize: 11,
     marginBottom: 4,
     marginTop: 0,
-    marginLeft: 8,
+    marginLeft: 12,
   },
   contactAndEmail: {
     flexDirection: 'row',
@@ -98,7 +97,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   header3: {
-    fontSize: 13,
+    fontSize: 12,
     fontWeight: 'bold',
     marginBottom: 4,
     marginLeft: 8,
@@ -195,7 +194,7 @@ const MyDocument = () => {
                 <Text style={styles.header2}>• {education.institution.toUpperCase()}</Text>
                 <Text style={styles.content}>{new Date(education.graduationDate).toLocaleDateString('en-GB')}</Text>
               </View>
-              <Text style={styles.designation}>{education.degree}</Text>
+              <Text style={styles.header3}>{education.degree}</Text>
               <Text style={styles.designation}>{education.major}</Text>
             </View>
           ))}
