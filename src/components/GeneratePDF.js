@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: 'black',
-    fontSize: 12,
+    fontSize: 14,
     padding: 5,
     textAlign: 'center',
     borderRadius: 8,
